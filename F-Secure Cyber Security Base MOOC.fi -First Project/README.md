@@ -1,14 +1,3 @@
-<sub>
-<strong><ins>MENU</ins>:</strong>
-<br />
-<a href="#owasp">Compare to OWASP TOP Ten</a>
-<br /><br />
-<a href="https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project#how-to-work">Design of work with this project application</a>
-<br /><br />
-<a href="https://github.com/marrbjorn/documentation/blob/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project/README.md#meanings">Troublepoints with project-application</a>
-<hr />
-<hr />
-</sub>
 Small background:
 -----------------
 
@@ -25,6 +14,8 @@ So I decided to do not hard designed application and with some kind of "tricks" 
 Project available at the github page: https://github.com/marrbjorn/CyberSecurityCourse
 
 --> and <a href="https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project">this page</a> will be as documentation of project;
+
+and shortcut for <a href="#owasp">Compare to OWASP TOP Ten</a>
 
 
 Setup:
