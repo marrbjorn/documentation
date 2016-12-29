@@ -163,13 +163,24 @@ And as additional potentially points with:
  -> debug credentials (admin:admin);
  which maybe do not changed.
  
- -> URL for page with some of src-files as review-ask other team ( http:/127.0.0.1:8080/formsrc?review=on );
- which also covered by login-form and probably have some of protection-layers;
+ -> URL for page with some of src-files as review-ask other team 
+      ( http:/127.0.0.1:8080/formsrc?review=on );
+  which also covered by login-form.
+  and probably have some of protection-layers;
  
- -> information about CMS Framework (and that there was in use vulnerable build of this CMS);
- with this kind of project - we will go to think that there is known CMS and known vulnerability for this CMS;
- and design of vulnerability is known "backdoor"-access credentials (as administrator-rights account);
- Usually known vulnerabilities can be visible under the web (any websites, cve-lists, advisories and other).
+ -> information about CMS Framework 
+      (and that there was in use vulnerable build of this CMS);
+  with this kind of project:
+we will go to think that there is:
+  known CMS and 
+  known vulnerability for this CMS;
+and design of vulnerability is:
+  known "backdoor"-access credentials (as administrator-rights account);
+Usually known vulnerabilities can be visible under the web:
+  any websites, 
+  cve-lists, 
+  advisories and 
+  other.
  
  So maybe this CMS Framework build also still not updated.
  "brief-search" for this vulnerability give the result that backdoor-credentials (CMS:CMSpassword).
