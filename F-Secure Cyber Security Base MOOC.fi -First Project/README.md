@@ -266,7 +266,7 @@ We get result-page of this action, where information-words and menu with three U
 With this step we able back to known page with src-file.
 And check it.
 
-We able to get there potential trouble with handling output data from database about phones.
+We able to found there potential trouble with handling output data from database about phones.
 
 There visible that in somewhat reasons output text for phones comes as "unescaped text".
 By the usage Thymeleaf (Java/HTML template engine) features.
@@ -288,7 +288,7 @@ So.. with previous fill-action will be situation, when someone able to see list 
 
  -> there will be alert from "phone"-field (and visible "string" under the "name"-field).
 
-But this trouble possible to use for any other actions and reasons.
+But this troublepoint possible to use for any other actions and reasons.
 
 Looks like that page with table of all listeners can be there....
 
@@ -309,7 +309,7 @@ We also able to find that under the "form-thanks" html-page (as src of page) for
            
       <div sec:authorize = "hasAuthority ('ADMIN')">
 
-Which should means that current point have to visible just for admins... but there is mistake with design.
+Which should means that current point have to be visible just for admins... but there is mistake with design.
 
 So this is visible for all.
 
@@ -340,14 +340,121 @@ http://127.0.0.1:8080/fylkr?trick=doTheTrick
 If we open this URL after previous actions.. so we get firstly alert.
 
 And after that full table (under the HTML template) with all invited listeners.
+ <sub>(Donald Duck included, where "Donald" is name  and "Duck" is phone)</sub>
 
 In fact - page should be visible just for adminstrators.
 
-Looks like that there is just one protection-layer: "parameter"-string from user's browser.
+Looks like that there is just one protection-layer: GET / "parameter"-string from user's browser.
 
 For this type of "hidden" page can be more protection in fact.
 
 
 <hr />
 
-to be continued...
+MEANINGS
+========
+
+This project-application have some kind of troubles, vulnerable points and not proper usage design things.
+
+All of this things (and tricks) will do ability to exploit it.
+
+Mainly with this kind of "template/PoC" there missing too much critical exploiting or attack-points.
+
+But this is anyway can be visible as "potential" troubles or things, which should be fixed.
+
+Or which can be critical later...
+
+Mainly there is next main troublepoints and additional troubles (which can be less likely exploiting or so visible):
+
+<ul>
+<li><code>debug-todo-page do not deleted or properly denied</code></li>
+<br />
+<li><code>page-for-administrators-only goes be protected just by get-parameter string</code></li>
+<br />
+<li><code>unescaped text output for phone-field</code></li>
+<br />
+<li><code>csrf-protection (provided by Spring framework) is disabled</code></li>
+<br />
+<li><code>so called "Powerful Custom CMS v2" with known vulnerability</code></li>
+<br />
+<li><code>passwords do not encrypted totally</code></li>
+<br />
+<li><code>HTTPS is missing</code></li>
+<br />
+<li><code>h2-console is available to be opened with this tries</code></li>
+<br />
+<li><code>do not added some of proper features</code></li>
+<br />
+<li><code>there is can be some of crash-situation for application</code></li>
+</ul>
+
+About first two points:
+---
+<pre>
+this is already troublepoint... 
+but also as result there start be visible a lot of other troublepoints.
+like information, which can be critical start be randomly visible.
+
+also list of all listeners (which should be just for adminstrators)...
+goes be visible for all, who know proper string.
+there is some of mistakes or not proper usage design 
+(or just do not using proper design)...
+
+so as result debug-page (with critical data) is available for all.
+
+and page just for administrators:
+do not protectected by something more than get-query-string from user's browser.
+</pre>
+
+About unescaped/escaped text output and CSRF:
+---
+<pre>
+phone-field with unescaped output text just do ability:
+for exploiting situation by Cross-Site Scripting (XSS).
+　
+and mainly - if there will be more related troublepoints:
+will be more higher risk-usage.
+there is a lot of steps to prevent it (and mainly by frameworks in use - Spring or Thymeleaf);
+
+by default (with proper usage) Spring Framework will add CSRF-protection enabled.
+　
+There is disabled-status for this feature under the security config.
+　
+But also do not "enabled" CSRF-protection (like tokens) under the html-templates.
+　
+So there is disabled and not enabled "CSRF-protection"..
+but this is provided by tools in use for this project-application.
+</pre>
+
+About vulnerable "potential" CMS:
+---
+<pre>there is just "meanings" that this project-application using CMS.
+　
+And this CMS with known vulnerability (backdoor-admin-rights credentials).
+　
+And not updated properly... but current build of "this CMS" is "v5".
+　
+So.. too much outdated in fact. :) 
+</pre>
+
+About the other points:
+---
+<pre>
+Passwords there is not encrypted. Not protected properly.
+If there will be access to database (or hack it):
+so it will be just passwords with normal view.
+
+HTTPS is missing - so mainly:
+there is can be visible all things between browser/application with less steps to do trick.
+
+default console-access for build-in SQL/hibernate database is enabled:
+and avaialble to be opened with this tries.
+
+there is a lot of features, which do not added yet:
+Like "logout"-points and many other proper things.
+
+design of some steps will create potential crash-situatuion. 
+Time to time this is can be too much critical.
+</pre>
+<hr />
+<hr />
