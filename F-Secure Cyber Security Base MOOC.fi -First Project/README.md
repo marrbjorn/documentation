@@ -157,19 +157,19 @@ With this page we able to get more interesting (or helpful) information:
 <li>And some other entry-strings;</li>
 </ul>
 <pre>
-So after this result with found the hidden-page.
-And as additional potentially points with:
--> debug credentials (admin:admin);
- which maybe do not changed.
+ So after this result with found the hidden-page.
+ And as additional potentially points with:
+  -> debug credentials (admin:admin);
+  which maybe do not changed.
  
--> URL for page with some of src-files as review-ask other team 
+  -> URL for page with some of src-files as review-ask other team 
       ( http:/127.0.0.1:8080/formsrc?review=on );
-  which also covered by login-form.
-  and probably have some of protection-layers;
+   which also covered by login-form.
+   and probably have some of protection-layers;
  
--> information about CMS Framework 
+  -> information about CMS Framework 
       (and that there was in use vulnerable build of this CMS);
-  with this kind of project:
+   with this kind of project:
 we will go to think that there is:
   known CMS and 
   known vulnerability for this CMS;
@@ -181,8 +181,8 @@ Usually known vulnerabilities can be visible under the web:
   advisories and 
   other.
  
-So maybe this CMS Framework build also still not updated.
-"brief-search" for this vulnerability give the result that backdoor-credentials (CMS:CMSpassword).
+ So maybe this CMS Framework build also still not updated.
+  "brief-search" for this vulnerability give the result that backdoor-credentials (CMS:CMSpassword).
 </pre>
 
 So, we have some information and able to try do something.
