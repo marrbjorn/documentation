@@ -156,6 +156,7 @@ With this page we able to get more interesting (or helpful) information:
 <q><strong> ^ -> looks like that build of this CMS-framework was with known vulnerability;</strong></q>
 <li>And some other entry-strings;</li>
 <ul>
+=========
 
 <pre>
 So after this result with found the hidden-page.
