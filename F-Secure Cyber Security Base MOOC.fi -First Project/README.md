@@ -1,3 +1,7 @@
+<strong>You able directly go to:</strong><code><nav><a href="#owasp">Compare to OWASP TOP Ten</a></nav></code>
+<hr />
+<hr />
+
 Small background:
 -----------------
 
@@ -26,8 +30,7 @@ Get started can be with next steps:
 <br />
 <strong>SECOND</strong>: download this project ( https://github.com/marrbjorn/CyberSecurityCourse ) as zip-file or by git-commands as usually.
 
-<br />
-<b>THIRD</b>: unpack it (if downloaded zip-file) and open project under the IDE (with Netbeans: "File -> Open Project..." under the menu).
+<br /><b>THIRD</b>: unpack it (if downloaded zip-file) and open project under the IDE (with Netbeans: "File -> Open Project..." under the menu).
    
     Then do the "Clean and Build Project" (how it called under the Netbeans);
     this will trigger downloading/creating target-files and properly build project;
@@ -79,9 +82,7 @@ There is some of steps to play with application-project (for get view of potenti
 Under the Java-files (or html-templates) I also added comments about places, which can be fixed (or how can be fixed);
 
 This is mostly covered some of "troubles" in design; But some of them based on "meanings";
-
 <hr />
-
 HOW TO WORK
 ===========
 First steps as start can be like that:
@@ -458,3 +459,5 @@ Time to time this is can be too much critical.
 </pre>
 <hr />
 <hr />
+
+<h1 id="owasp"><ins>Compare to OWASP Top TEN</ins></h1>
