@@ -155,9 +155,7 @@ With this page we able to get more interesting (or helpful) information:
 <li>There is note "do not forget update CMS-framework";</li>
 <q><strong> ^ -> looks like that build of this CMS-framework was with known vulnerability;</strong></q>
 <li>And some other entry-strings;</li>
-<ul>
-=========
-
+</ul>
 <pre>
 So after this result with found the hidden-page.
 And as additional potentially points with:
