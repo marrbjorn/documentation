@@ -1,5 +1,8 @@
-<strong>You able directly go to:</strong>
-<nav><a href="#owasp">Compare to OWASP TOP Ten</a></nav
+<strong><ins>MENU</ins>:</strong>
+
+<a href="#owasp">Compare to OWASP TOP Ten</a>
+
+<a href="https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project#how-to-work">Design of work with this project application</a>
 <hr />
 <hr />
 
