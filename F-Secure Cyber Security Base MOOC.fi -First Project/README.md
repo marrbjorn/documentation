@@ -55,9 +55,9 @@ Like "friend" or someone else (some kind of special listeners);
 
 As result there will be list (database with "name" and "phone-number") of listeners, which invited by music-bands;
 
-Service provide ability to see full list of this listeneres.
+Service provide ability to see full list of this listeners.
 
-    but this is should be available just for adminstrators (of party/service/website);
+    but this is should be available just for administrators (of party/service/website);
     
 <hr />
 
@@ -341,7 +341,7 @@ If we open this URL after previous actions.. so we get firstly alert.
 And after that full table (under the HTML template) with all invited listeners.
  <sub>(Donald Duck included, where "Donald" is name  and "Duck" is phone)</sub>
 
-In fact - page should be visible just for adminstrators.
+In fact - page should be visible just for administrators.
 
 Looks like that there is just one protection-layer: GET / "parameter"-string from user's browser.
 
@@ -394,7 +394,7 @@ this is already troublepoint...
 but also as result there start be visible a lot of other troublepoints.
 like information, which can be critical start be randomly visible.
 
-also list of all listeners (which should be just for adminstrators)...
+also list of all listeners (which should be just for administrators)...
 goes be visible for all, who know proper string.
 there is some of mistakes or not proper usage design 
 (or just do not using proper design)...
@@ -402,7 +402,7 @@ there is some of mistakes or not proper usage design
 so as result debug-page (with critical data) is available for all.
 
 and page just for administrators:
-do not protectected by something more than get-query-string from user's browser.
+do not protected by something more than get-query-string from user's browser.
 </pre>
 
 About unescaped/escaped text output and CSRF:
@@ -447,12 +447,12 @@ HTTPS is missing - so mainly:
 there is can be visible all things between browser/application with less steps to do trick.
 
 default console-access for build-in SQL/hibernate database is enabled:
-and avaialble to be opened with this tries.
+and available to be opened with this tries.
 
 there is a lot of features, which do not added yet:
 Like "logout"-points and many other proper things.
 
-design of some steps will create potential crash-situatuion. 
+design of some steps will create potential crash-situation. 
 Time to time this is can be too much critical.
 </pre>
 <hr />
@@ -469,7 +469,7 @@ Compare to OWASP and their Top Ten ( https://www.owasp.org/index.php/Top_10_2013
 
   <pre>as OWASP A2 and OWASP A6</pre>
 
-There is do not totally proper work with passwords (encryption or hasing is missing; and stored not encrypted passwords);
+There is do not totally proper work with passwords (encryption or hashing is missing; and stored not encrypted passwords);
 
 Missing encryption between application and browser. 
 
@@ -543,7 +543,7 @@ Most of this places - I noted under the project-application.
 
 There is possible do a lot of steps (different ones) and required to choose...
 
-Usuallly this is based on "design" of application.
+Usually this is based on "design" of application.
 
 <hr />
 <b> Cross-Site Request Forgery (CSRF) </b>
