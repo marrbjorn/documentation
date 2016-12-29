@@ -1,7 +1,5 @@
 <strong>You able directly go to:</strong>
-
-
-<code><nav><a href="#owasp">Compare to OWASP TOP Ten</a></nav></code>
+<nav><a href="#owasp">Compare to OWASP TOP Ten</a></nav
 <hr />
 <hr />
 
