@@ -15,7 +15,7 @@ Project available at the github page: https://github.com/marrbjorn/CyberSecurity
 
 --> and <a href="https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project">this page</a> will be as documentation of project;
 
-and shortcut for <a href="#owasp">Compare to OWASP TOP Ten</a>
+and shortcut for <a href="#owasp">Compare to OWASP Top TEN</a>
 
 
 Setup:
@@ -459,3 +459,130 @@ Time to time this is can be too much critical.
 <hr />
 
 <h1 id="owasp"><ins>Compare to OWASP Top TEN</ins></h1>
+
+This is project application can be vulnerable for some kind of attacks.
+Or can be with vulnerabilities, troublepoints or mistakes.
+
+Compare to OWASP and their Top Ten ( ) there is can be next ones:
+
+<b>Broken Authentication and Session Management</b> <strong>||</strong> <b>Sensitive Data Exposure</b>
+
+  <pre>as OWASP A2 and OWASP A6</pre>
+
+There is do not totally proper work with passwords (encryption or hasing is missing; and stored not encrypted passwords);
+
+Missing encryption between application and browser. 
+
+Do not handled logout and some other related things.
+
+For fix this points - we able (as example) to use features, which provided by Spring Framework.
+
+I add comments for project-application with places, which can be removed or added.
+
+Mainly there we able to use "encryption"-methods for passwords and store it as encrypted ones (properly).
+
+Good to use secure connection also. 
+
+Also there is some kind of potential situation for "hack" password database.
+<hr />
+
+<b>Cross-Site Scripting (XSS)</b>
+
+<pre>as OWASP A3</pre>
+
+There is not really proper escaping for user input data. For one of forms (phone-field).
+
+Which goes be under the table of all listeners.
+
+For prevent it with current project-application:
+
+we able to use "Thymeleaf" (Java/HTML template engine) with proper configuration about.
+
+I also add comments about "potential" fix under the project-application.
+
+Mainly there will be enough re-change "th:utext" to "th:text" under the fylkr.html-template.
+
+So to use this troublepoint will be not so visible.
+<hr />
+
+<b>Security Misconfiguration</b>
+
+<pre>as OWASP A5</pre>
+
+This is main troublepoint for current project-application.
+
+Start from this - we able to get some more things.
+
+But there is already have some of critical (in common sense) things like:
+
+default-debug admin credentials (admin:admin); 
+
+unused debug pages with critical information ("/hidden"); 
+
+unpatched tools in use ("potential" CMS);
+
+default SQL/hibernate console is opened;
+
+do not properly handling crash-situation;
+
+some designs not properly used and other;
+
+<hr />
+
+<b> Missing Function Level Access Control </b>
+
+<pre> OWASP A7</pre>
+
+There is possible get visible information about "content, which not planned to be visible";
+
+And also visible just use "user's browser" and action for get content, which should be covered.
+
+Not enough check, protection-checks and some mistakes with design it.
+
+Most of this places - I noted under the project-application.
+
+There is possible do a lot of steps (different ones) and required to choose...
+
+Usuallly this is based on "design" of application.
+
+<hr />
+<b> Cross-Site Request Forgery (CSRF) </b>
+
+<pre>as OWASP A8</pre>
+
+There is not properly designed CSRF-protection.
+
+With current project-application there is not so many steps to critical-exploiting this.
+
+But there is have possibilities around.
+
+Mainly this is based on "csrf.disabled" feature.
+
+For prevent it - we able use default security config feature by Spring Framework.
+
+Or do additional check/protection under the templates (Spring/Thymeleaf) or another steps.
+
+I added notes for project application about this places (mostly).
+
+<hr />
+<b> Using Components with Known Vulnerabilities</b>
+
+<pre>as OWASP A9</pre>
+
+For this project-application we able to think that there is some of "CMS" in use.
+
+And this "CMS build" with known vulnerability.
+
+Where is "known" backdoor-admin-account credentials.
+
+CMS not updated and "account" not disabled.
+<hr />
+<hr />
+
+<sub>
+<strong>CyberSecurityCourse project-application for course series</strong>:
+</sub>
+
+<sub>
+mooc.fi Cyber Security Base by University of Helsinki in collaboration with F-Secure Cyber Security Academy
+</sub>
