@@ -197,9 +197,9 @@ Open from "/hidden" page URL with "src"-files and get login-form.
 
 Type there "CMS"-as-login and "CMSpassword"-as-password;
 
-So we get access denied.... most likely there is check for something.
+So we get access denied.... most likely there is check for something (but credentials are valid).
 
-Go back to hidden page (and to src-review page) or from login-form..
+Go back to hidden page (and to src-review page after) or from login-form..
 
 and try to use "admin:admin" for this special-src page.
 
@@ -216,4 +216,138 @@ So based on knowledge of admin-debug-credentials (from forgotten debug-page):
 we able to review src of html-template file.
 </pre>
 <hr />
-to be continued....
+
+We can directly study this html-template src-file or will try to login and check what service able to do.
+
+Stay opened src-file page and go open fresh tab with login-form.
+
+And go to use any of already known for us credentials (admin:admin or CMS:CMSpassword).
+
+Most likely there is can be other not strong passwords (by some of music band accounts).
+
+But mainly (with current try) we able to think that music bands will use "strong" passwords.
+
+But also able to think that "design" of handling this passwords can be with some troubles.
+
+<pre>So with direct usage login-form for http://127.0.0.1:8080  and valid credentials</pre>
+
+We able to get form-page like welcome-page.
+
+      http://127.0.0.1:8080/form
+
+There have ability to read information-words and invite listener (as music band's friend or other);
+
+Go do "enter" from first! Ok, we get information that there is required name-field.
+
+So fill it and we able do not fill "phone"-page. 
+
+Or goes try to fill it (or both) with tricks like "html-tags or scripts"
+
+So with this step <code>name</code> can be (as "alert" script usage): 
+
+     <script>alert('name')</script>
+
+And <code>phone</code> can be (as "alert" script usage):
+
+     <script>alert('phone')</script>
+     
+Fill it and transfer to application.
+
+We get result-page of this action, where information-words and menu with three URLs:
+
+<ul>
+<li> Add some else listeners;</li>
+<li> Re-login;</li>
+<li> And strange named URL</li>
+</ul>
+<hr />
+
+<pre>
+With this step we able back to known page with src-file.
+And check it.
+
+We able to get there potential trouble with handling output data from database about phones.
+
+There visible that in somewhat reasons output text for phones comes as "unescaped text".
+By the usage Thymeleaf (Java/HTML template engine) features.
+
+Which time to time can be helpful - but not sure - that it can be helpful there.
+
+Looks like that:
+</pre>
+        
+       <td th:utext="${listener.phone}"><code>Listener phone</code></td>
+    
+<code>th:utext</code> probably comes there randomly (or for temporary debug);
+
+This situation will create potential ability to do <strong>Cross-Site Scripting (XSS)</strong>
+
+Name field have proper output handling as <code>th:text</code> (escaped text).
+
+So.. with previous fill-action will be situation, when someone able to see list of listeners:
+
+ -> there will be alert from "phone"-field (and visible "string" under the "name"-field).
+
+But this trouble possible to use for any other actions and reasons.
+
+Looks like that page with table of all listeners can be there....
+
+Or just because it asked for review - maybe under the debugging.
+
+-------
+
+So back to the dreams about "strange named URL" under the "thanks-menu" after the transferring listener.
+
+There have strange words as: <q><strong>Do you remember fylkr's song "do The Trick" from album "trick"?</strong></q>
+
+and URL (page which can not be displayed) for 
+
+<pre>http://127.0.0.1:8080/fylkr</pre>
+
+We also able to find that under the "form-thanks" html-page (as src of page) for this URL/menu-tab have next strings:
+           
+           
+      <div sec:authorize = "hasAuthority ('ADMIN')">
+
+Which should means that current point have to visible just for admins... but there is mistake with design.
+
+So this is visible for all.
+
+Most likely that there is can be else one temporary-debug or under-construction page.
+
+And with knowledge that there is mistake and page can be there (and most likely strange words is tips):
+
+ -> we able to start thinking around.
+
+There was already some pages with "string"-checks under the GET-methods.
+
+And looks like there is can be something around it.
+We able to re-login under the admin credentials.
+
+But because there is already mistake with check-about - so maybe page will be allowed to all too.
+
+<pre>
+We have potential debug-URL with debug-tips.
+
+Words says about fylkr's song (and URL have /fylkr  page-name) song "do The Trick" from album "trick".
+Go to think that there is tips how to do GET-query or how should be looks like URL for proper result.
+
+After some tries... we able to get proper configuration for this:
+
+http://127.0.0.1:8080/fylkr?trick=doTheTrick 
+</pre>
+
+If we open this URL after previous actions.. so we get firstly alert.
+
+And after that full table (under the HTML template) with all invited listeners.
+
+In fact - page should be visible just for adminstrators.
+
+Looks like that there is just one protection-layer: "parameter"-string from user's browser.
+
+For this type of "hidden" page can be more protection in fact.
+
+
+<hr />
+
+to be continued...
