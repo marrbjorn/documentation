@@ -29,7 +29,7 @@ Get started can be with next steps:
 <br />
 <b>THIRD</b>: unpack it (if downloaded zip-file) and open project under the IDE (with Netbeans: "File -> Open Project..." under the menu).
    
-    Than do the "Clean and Build Project" (how it called under the Netbeans);
+    Then do the "Clean and Build Project" (how it called under the Netbeans);
     this will trigger downloading/creating target-files and properly build project;
 
 <br />
@@ -38,4 +38,42 @@ Get started can be with next steps:
     first launch may ask about main class - choose this default one.
     
 <hr />
-to be continued....
+DESIGN OF APPLICATION
+=====================
+=====================
+
+There is some kind of landing page for music-party/meeting (but mainly friendly service for music bands);
+
+Each music band/musician already registered to be part of this party (by design);
+
+Service <ins>do not</ins> provide ability to add more bands (this is can be covered by the other one steps);
+
+Service <ins>do</ins> provide own access for each music-band/musician to be with ability "invite listeners";
+
+Like "friend" or someone else (some kind of special listeners); 
+
+As result there will be list (database with "name" and "phone-number") of listeners, which invited by music-bands;
+
+Service provide ability to see full list of this listeneres.
+
+    but this is should be available just for adminstrators (of party/service/website);
+    
+<hr />
+
+There is practically missing any other features or design at work.
+And for critical attacks or total impact there is not so many steps.
+
+      but this is do not remove points that:
+        -> "vulnerable" things and 
+        -> "vulnerable" design of things
+      will add vulnerabilities or troubles to application. 
+       and this is:
+        -> can be "exploited" or 
+        -> not (but with potential ability do that).
+
+<strong>This project will be with improve design and additional features later.
+But main meanings will be with same design.</strong>
+
+<hr />
+
+
