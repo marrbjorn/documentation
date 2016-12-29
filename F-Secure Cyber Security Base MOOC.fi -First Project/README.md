@@ -460,10 +460,10 @@ Time to time this is can be too much critical.
 
 <h1 id="owasp"><ins>Compare to OWASP Top TEN</ins></h1>
 
-This is project application can be vulnerable for some kind of attacks.
+This project application can be vulnerable for some kind of attacks.
 Or can be with vulnerabilities, troublepoints or mistakes.
 
-Compare to OWASP and their Top Ten ( ) there is can be next ones:
+Compare to OWASP and their Top Ten ( https://www.owasp.org/index.php/Top_10_2013-Top_10 ) there is can be next ones:
 
 <b>Broken Authentication and Session Management</b> <strong>||</strong> <b>Sensitive Data Exposure</b>
 
