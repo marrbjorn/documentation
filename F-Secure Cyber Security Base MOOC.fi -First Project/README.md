@@ -471,9 +471,11 @@ Compare to OWASP and their Top Ten ( https://www.owasp.org/index.php/Top_10_2013
 
 There is do not totally proper work with passwords (encryption or hashing is missing; and stored not encrypted passwords);
 
-Missing encryption between application and browser. 
+Missing encryption between application and browser (visible under the browser-console and HTTP-protocol).
 
-Do not handled logout and some other related things.
+This is will be more visible by using sniffers. Or with popular software for analysing web-traffic (liek Wireshark);
+
+Do not handled logout and some other related things. As result stuck for "session"-access;
 
 For fix this points - we able (as example) to use features, which provided by Spring Framework.
 
@@ -563,6 +565,14 @@ For prevent it - we able use default security config feature by Spring Framework
 Or do additional check/protection under the templates (Spring/Thymeleaf) or another steps.
 
 I added notes for project application about this places (mostly).
+
+We able do the "html"-template (or html-string) for "POST"-form to add "listener";
+
+This is can be more critical with "Cross-Site-Scripting" trouble.
+
+There is can be "description", but I will think to provide "extended" build of project.
+
+Where CSRF-troublepoint with will be with more interesting design (or some kind of this).
 
 <hr />
 <b> Using Components with Known Vulnerabilities</b>
