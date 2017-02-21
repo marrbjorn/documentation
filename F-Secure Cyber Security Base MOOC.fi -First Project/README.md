@@ -115,7 +115,7 @@ At this step - if credentials do not known for us - we able to do some of steps 
 
 We able to start from trying to find another available pages, than login-form.
 
-This is can be "forgotten debug-pages", "consoles", "backdoors" or other.
+Time to time can be "forgotten debug-pages", "consoles", "backdoors" or other.
 
 Usually this is based on misconfiguration or temporary mistakes;
 <pre>
@@ -359,7 +359,7 @@ All of this things (and tricks) will do ability to exploit it.
 
 Mainly with this kind of "template/PoC" there missing too much critical exploiting or attack-points.
 
-But this is anyway can be visible as "potential" troubles or things, which should be fixed.
+But this anyway can be visible as "potential" troubles or things, which should be fixed.
 
 Or which can be critical later...
 
@@ -473,7 +473,7 @@ There is do not totally proper work with passwords (encryption or hashing is mis
 
 Missing encryption between application and browser (visible under the browser-console and HTTP-protocol).
 
-This is will be more visible by using sniffers. Or with popular software for analysing web-traffic (liek Wireshark);
+This will be more visible by using sniffers. Or with popular software for analysing web-traffic (liek Wireshark);
 
 Do not handled logout and some other related things. As result stuck for "session"-access;
 
@@ -537,7 +537,7 @@ some designs not properly used and other;
 
 There is possible get visible information about "content, which not planned to be visible";
 
-And also visible just use "user's browser" and action for get content, which should be covered.
+And also possible just to use "user's browser" and action for get content, which should be covered.
 
 Not enough check, protection-checks and some mistakes with design it.
 
@@ -558,7 +558,7 @@ With current project-application there is not so many steps to critical-exploiti
 
 But there is have possibilities around.
 
-Mainly this is based on "csrf.disabled" feature.
+Mainly based on "csrf.disabled" feature.
 
 For prevent it - we able use default security config feature by Spring Framework.
 
