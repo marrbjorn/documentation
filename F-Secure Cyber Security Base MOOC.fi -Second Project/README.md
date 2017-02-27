@@ -113,8 +113,66 @@ So - I remove VMWare (uninstall vagrant plugin for vmware-workstation also). And
  
  What if the "ssh"-scripts launched with time, when it not expected and not work "re-launch it" with proper time.
  
- So... there is will be result soon.
+ So... I added some time for the "boot up waiting"-option (seven minutes).
  
+ Which probably not really related with my situation. There is anyway was delay between this commands.
+ 
+ System launched and there is anyway was a lot of mistakes with ssh-cmd-line action (not sure what it was there).
+ 
+ I decided to check more with system "UI". Re-check Firewall rules, re-check folders.
+ 
+ There was missing SSH-clients (OpenSSH under the folders). I decided that maybe it should be there.
+ 
+ Mainly because there was Firewall rules for this.
+ 
+ Go to the VM's browser, Google and type OpenSSH (I not really friendly with ssh).
+ 
+      also there was troubles with opening some HTTPS pages.
+      metasploitable3 about outdated build of Windows.
+      and there looks like Internet Explorer 8 (or around this).
+      
+      So I start think at this step.. that maybe there is trouble about it.
+      If websites/changes for the HTTPS-setting goes be with broken work for this system already.
+      And some scripts-download/get OpenSSH or other requirements not work.
+      
+ Found also that OpenSSH website not about Windows platform mainly.
+ 
+ And for the Windows usage there is should be available next URLs (and packages there):
+ 
+     https://www.mls-software.com
+
+Also get notifiation about "page not available to open" (based on HTTPS).
+
+Re-change protocol to HTTP and get the block page by F-Secure. :)
+
+    I have to add that my main system (where I try to set up metasploitable3) with F-Secure SAFE installation.
+    
+    F-Secure SAFE - F-Secure security solution for home users. With mainly two modules AV and Browsing Protection.
+    
+    Browsing Protection not about just blocking harmful pages and suspicious-rated pages.
+    
+    But also there some of features like Content Blocker (mainly as Parental Control feature).
+    
+    I have use Content Blocker for "restrict" access to "unknown-content" pages. 
+    
+    As result F-Secure installation will be block all pages, which unrated by F-Secure yet.
+    
+    
+And this mls-software page certainly this unrated page by F-Secure (on current time/day).
+
+Funny point that F-Secure installed under the my main system, but also block access under the VM's browser.
+
+So it was already more visible that maybe it can be reason for SSH-stuck (downloading openssh just not started as example).
+
+I turn off Content Blocker feature. And run next try packer build.
+
+Yes, SSH normally started and all next process goes be with good view.
+
+BUT.... result comes with some of fresh stuck-points (already two times) and as result:
+
+    ==> Builds finished but no artifacts were created.
+    
+So I have to try some check-dreams about situation..... and understand what can be stuck-reason with this time
  
  
  
