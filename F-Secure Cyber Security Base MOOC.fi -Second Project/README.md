@@ -170,9 +170,11 @@ Yes, SSH normally started and all next process goes be with good view.
 
 BUT.... result comes with some of fresh stuck-points (already two times) and as result:
 
-    ==> Builds finished but no artifacts were created.
+    ==> Builds finished but no artifacts were created.
     
-So I have to try some check-dreams about situation..... and understand what can be stuck-reason with this time
+So I have to try some check-dreams about situation..... and understand what can be stuck-reason with this time.
+
+Lines about potential troubles with not visible reasons yet (for me). 
  
  
  
