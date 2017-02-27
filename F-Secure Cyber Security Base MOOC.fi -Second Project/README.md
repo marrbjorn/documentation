@@ -117,6 +117,8 @@ So - I remove VMWare (uninstall vagrant plugin for vmware-workstation also). And
  
  Which probably not really related with my situation. There is anyway was delay between this commands.
  
+ And most likely "ssh"-scripts launched anyway (like "re-launch" work - if the boot there with delay).
+ 
  System launched and there is anyway was a lot of mistakes with ssh-cmd-line action (not sure what it was there).
  
  I decided to check more with system "UI". Re-check Firewall rules, re-check folders.
