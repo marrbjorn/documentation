@@ -53,3 +53,14 @@ Maybe it OK, but during my try - their "shop" was not available anyway. Payments
 
 So - I remove VMWare (uninstall vagrant plugin for vmware-workstation also). And start try next option-step.
 
+<strong>Main meanings about this try can be like that:</strong>
+
+--> If you have (or able to buy) Vagrant VMWare license (different with just VMWare license);
+
+--> And you have license for the VMWare Workstation (or maybe officially supported some other solutions);
+
+       or optionally able to do some of workarounds for VMWare Player with not expected result.
+       
+ Most likely you normally able to use Packer/Vagrant/Metasploitable3/VMWare setting.
+ ---
+ ---
