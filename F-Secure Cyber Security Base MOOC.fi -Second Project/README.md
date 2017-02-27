@@ -26,12 +26,17 @@ Under the Metasploitable3 wiki-page available instruction-steps and requirements
     
 For me it means that there is small options to launch current VM (not enough powerful Linux machine and not possible under the VM machine).
 
-So I decided to do this by common steps with one of Windows machine (around normal settings)
+So I decided to do this by common steps with one of Windows machine (around normal settings).
+
 Also I found that under the metasploitable3-folder we can to use .json-file for VMWare.
 
-I did the try to use it. 
+I did the try to use it.
+
 Installation of Packer quite normal and brief-step (also added this to system PATH).
-Vagrant installation also quickly and added to system PATH by installation-steps. Reload plugin also normally installed by documentation-steps.
+
+Vagrant installation also quickly and added to system PATH by installation-steps. 
+
+Reload plugin also normally installed by documentation-steps.
 
 So brief-try to use it for the VMWare Player shows mistakes (not supported VMWare Player).
 
