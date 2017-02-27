@@ -162,7 +162,9 @@ Re-change protocol to HTTP and get the block page by F-Secure. :)
     
 And this mls-software page certainly this unrated page by F-Secure (on current time/day).
 
-Funny point that F-Secure installed under the my main system, but also block access under the VM's browser.
+Funny point that F-Secure installed under my main system, but also will block (restrict access) under VM's system/browser.
+
+Maybe good.
 
 So it was already more visible that maybe it can be reason for SSH-stuck (downloading openssh just not started as example).
 
