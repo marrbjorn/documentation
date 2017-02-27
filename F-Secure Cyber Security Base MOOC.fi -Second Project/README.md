@@ -83,7 +83,7 @@ So - I remove VMWare (uninstall vagrant plugin for vmware-workstation also). And
  
      ==> virtalbox-iso: waiting for SSH to become available...
      
- After some time (hours maybe) time-out comes and break-the-proces.
+ After some time (hours maybe) time-out comes and break-the-process.
  
  This step also take some delay with my VMWare experience, but anyway normally work.
  
