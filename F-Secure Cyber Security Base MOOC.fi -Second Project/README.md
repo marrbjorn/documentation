@@ -26,6 +26,7 @@ Under the Metasploitable3 wiki-page available instruction-steps and requirements
     
 For me it means that there is small options to launch current VM (not enough powerful Linux machine and not possible under the VM machine).
 
+#FIRST TRY
 So I decided to do this by common steps with one of Windows machine (around normal settings).
 
 Also I found that under the metasploitable3-folder we can to use .json-file for VMWare.
@@ -66,6 +67,54 @@ So - I remove VMWare (uninstall vagrant plugin for vmware-workstation also). And
 
        or optionally able to do some of workarounds for VMWare Player with not expected result.
        
- Most likely you normally able to use Packer/Vagrant/Metasploitable3/VMWare setting.
+<strong>Most likely you normally able to use Packer/Vagrant/Metasploitable3/VMWare setting.</strong>
  ---
  ---
+ 
+ <h3><strong>SECOND TRY</strong></h3>
+ 
+ I installed VirtualBox (latest build).
+ 
+ And with already installed/configured (before this) Packer/Vagrant:
+ 
+ I did the try to use packer build for the related metasploitable3 .json-file.
+ 
+ As result : stuck for SSH-waiting.
+ 
+     ==> virtalbox-iso: waiting for SSH to become available...
+     
+ After some time (hours maybe) time-out comes and break-the-proces.
+ 
+ This step also take some delay with my VMWare experience, but anyway normally work.
+ 
+ So, I decided to re-run this for Virtualbox else one time. But the same result after hours.
+ 
+ Basically there was resource-usage, but after that "not" and just stuck for SSH-waiting.
+ 
+ Some thought and else one run - anyway stuck.
+ 
+ I decided to re-check situation with editing .json-file;
+ 
+ I re-change headless-option for VirtualBox running from default-configuration to:
+ 
+      "headless": false
+      
+ And with my experience - looks like that there is waiting for boot up (just two minutes) not enough.
+ 
+ At least - when command line already noted waiting for SSH to become available (shortly after the waiting for boot up):
+ 
+ There is still installation process about first of steps.
+ 
+ When installation comes and scripts launched under the VM-command line there was visible:
+ 
+ that with try to do something about SSH - there comes a lot of mistakes as output. 
+ 
+ Not check it more - because decided to try add more "boot-time waiting" and check the result else one time.
+ 
+ What if the "ssh"-scripts launched with time, when it not expected and not work "re-launch it" with proper time.
+ 
+ So... there is will be result soon.
+ 
+ 
+ 
+ 
