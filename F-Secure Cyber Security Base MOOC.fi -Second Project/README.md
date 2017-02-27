@@ -180,5 +180,35 @@ So I have to try some check-dreams about situation..... and understand what can 
 
 Lines about potential troubles with not visible reasons yet (for me). 
  
+Fresh stuck was about next strings-result:
+
+    ==> Some builds didn't complete successfully and had errors:
+    --> virtualbox-iso: Error removing floppy controller: VBoxManage error: 
+    VBoxManage.exe: error: The machine 'packer-virtualbox-iso' is already locked for a session (or being unlocked)
+    VBoxManage.exe: error: Details: code VBOX_E_INVALID_OBJECT_STATE (0x80bb0007), 
+    component MachineWrap, interface IMachine, callee IUnknownVBoxManage.exe: error: 
+    Context: "LockMachine(a->session, LockType_Write)" at line 1038 of file VBoxManageStorageController.cpp
+    
+Firstly I tried to search about this lines.
+
+As result I get view that a lot of people get time to time this troublepoint.
+
+And practically each situation with not visible fix (there potentially some workarounds for them).
+
+I start to think that maybe my situation about something else (because some points differently to the situations).
+
+Also worst points of situation:
+
+    that usually about troublepoints with Packer/Vagrant (?) - there tries to say that trouble with Windows.
+    but most of users noted that situation and troublepoints do not related with Windows at all.
+    At least for common view of this.
  
- 
+So - I decided to check if just "restart" for my main system will be enough.
+
+I just thought - what if my a lot of tries to do "packer build" get the stuck for VirtualBox or other things.
+
+I did the restart. I re-run packer build and it normally completed.
+
+Also I normally add "box" to vagrant.
+
+Next will be "vagrant up" and Snort. Will see...
