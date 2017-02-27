@@ -139,7 +139,7 @@ So - I remove VMWare (uninstall vagrant plugin for vmware-workstation also). And
  
  And for the Windows usage there is should be available next URLs (and packages there):
  
-     https://www.mls-software.com
+     https://www.mls-software.com
 
 Also get notifiation about "page not available to open" (based on HTTPS).
 
