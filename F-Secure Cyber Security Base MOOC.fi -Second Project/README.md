@@ -49,7 +49,7 @@ This steps mainly required just for trying use Vagrant for the VMWare Player. An
 
 But based on other "limitation" (I thought that license-ask about VMWare) - I decided try VMWare Workstation Pro (trial-time) - if it will be more good and work from first.
 
-With VMWare Workstation PRO (trial-time) and .json-file (metasploitable3) for VMWare under the Packer/Vagrant usage - there is quite good result.
+With VMWare Workstation PRO (trial-time) and .json-file (metasploitable3) for VMWare --> alsow with the Packer/Vagrant usage - there is quite good result.
 
 But I found that "license-ask" (when we will try to add Vagrant box to the VM) about certain Vagrant design.
 
