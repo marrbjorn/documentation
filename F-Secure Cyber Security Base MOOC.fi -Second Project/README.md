@@ -212,3 +212,13 @@ I did the restart. I re-run packer build and it normally completed.
 Also I normally add "box" to vagrant.
 
 Next will be "vagrant up" and Snort. Will see...
+
+With some of check-steps vagrant up normally started, but already two times with trouble result.
+
+     http://sourceforge.mirrorservice.org/w/wa/wampserver/WampServer 2/WampServer 2.2/wampserver2.2d-x64.exe
+     
+In somewhat reason this URL will return "Page not found" (this URL under the scripts).
+
+As result "vagrant up" do not able complete process normally. Wampserver not installed.
+
+Will try next points.
