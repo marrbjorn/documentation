@@ -211,14 +211,37 @@ I did the restart. I re-run packer build and it normally completed.
 
 Also I normally add "box" to vagrant.
 
-Next will be "vagrant up" and Snort. Will see...
+Next step is "vagrant up"..
 
-With some of check-steps vagrant up normally started, but already two times with trouble result.
+With some of check-steps vagrant up normally started, but stable-stuck with trouble result about next point.
 
-     http://sourceforge.mirrorservice.org/w/wa/wampserver/WampServer 2/WampServer 2.2/wampserver2.2d-x64.exe
+    http://sourceforge.mirrorservice.org/w/wa/wampserver/WampServer 2/WampServer 2.2/wampserver2.2d-x64.exe
      
 In somewhat reason this URL will return "Page not found" (this URL under the scripts).
 
 As result "vagrant up" do not able complete process normally. Wampserver not installed.
 
 Will try next points.
+
+So - I not sure - why this URL troublepoint with my experience.
+
+Looks like that it stable give the "Page Not Found" with some of my tries (and checks).
+
+So it should be known - but I not found something about it (briefly).
+
+Decided just did the changes for the "metasploitable3\scripts\installs" about install_wamp.bat
+
+
+    Re-change this trouble-URL:
+    -> http://sourceforge.mirrorservice.org/w/wa/wampserver/WampServer 2/WampServer 2.2/wampserver2.2d-x64.exe
+    to the next URL: 
+    -> https://downloads.sourceforge.net/project/wampserver/WampServer 2/WampServer 2.2/wampserver2.2d-x64.exe
+    under the related string-line of .bat-file
+
+Re-check with fresh "vagrant up" and all normally downloaded/installed (at least - this step already not a stuck-point);
+
+---> Probably process is completed and looks like that I have to try launch VirtualBox.
+
+But with my first experience there was maybe known trouble about VirtualBOx VMs;
+
+I can to think about some of tries - so will check it.
