@@ -244,4 +244,31 @@ Re-check with fresh "vagrant up" and all normally downloaded/installed (at least
 
 But with my first experience there was maybe known trouble about VirtualBOx VMs;
 
-I can to think about some of tries - so will check it.
+I can to think about some of tries - most likely most of them can be helpful.
+
+With my experience there was enough just restart my main system.
+
+After this - I normally launch VirtualBox VM. 
+
+Some configure-steps for system and I tried to download Snort with their rules.
+
+And get total stuck about this step (but mainly with downloading rules). It was not available.
+
+With next day - I randomly met notification that probably during certain time there was troubles with Amazon S3.
+
+Most likely (and looks like) this trouble was about time when I tried get Snort-rules.
+
+And snort-rules certainly about s3.amazon-URLs, which was not available.
+
+I tried download rules today -> all OK, good and normal. So most likely it was related with this "trouble".
+
+    This situation (with amazon-s3) under articles marked as critical and large trouble.
+    But with my experience - I totally do not feel it. 
+    I just randomly get trouble-stuck with downloading Snort-rules.
+    And this try was more random, that common for my usage. 
+    So it was large trouble, but not so critical.
+
+Just anyway good to use such things with reasonable points and with places, where indeed it required too much.
+----
+
+Most likely "set up" completed. So will play with Snort.
