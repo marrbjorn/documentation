@@ -265,7 +265,10 @@ I tried download rules today -> all OK, good and normal. So most likely it was r
     This situation (with amazon-s3) under articles marked as critical and large trouble.
     But with my experience - I totally do not feel it. 
     I just randomly get trouble-stuck with downloading Snort-rules.
-    And this try was more random, that common for my usage. 
+    BUT ALSO MAYBE with uploading files to the github.com; I tried two picture-files.
+    It was stable with "trouble"-result. Today - all OK with related steps.
+    
+    And this experience was more random, that common for my usage. 
     So it was large trouble, but not so critical.
 
 Just anyway good to use such things with reasonable points and with places, where indeed it required too much.
