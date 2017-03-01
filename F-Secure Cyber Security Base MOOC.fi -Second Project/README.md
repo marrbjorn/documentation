@@ -269,6 +269,6 @@ I tried download rules today -> all OK, good and normal. So most likely it was r
     So it was large trouble, but not so critical.
 
 Just anyway good to use such things with reasonable points and with places, where indeed it required too much.
-----
+<hr />
 
 Most likely "set up" completed. So will play with Snort.
