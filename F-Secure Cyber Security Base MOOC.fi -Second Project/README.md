@@ -275,3 +275,19 @@ Just anyway good to use such things with reasonable points and with places, wher
 <hr />
 
 Most likely "set up" completed. So will play with Snort.
+
+# SNORT
+
+Firstly tried to understand how to properly use Snort and which result there should be.
+
+Decided to set up it as third "option" : Network Intrusion Detection System Mode ;
+
+With this step (NIDS-try) I get trouble-stuck about configuration.
+
+On current time about next one:
+
+     ... Missing/incorrect dynamic engine lib specifier. Fatal Error, Quitting ...
+
+Some tries, some search with web... but result anyway about this stuck.
+
+Will play with Snort more....
