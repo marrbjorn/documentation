@@ -290,4 +290,16 @@ On current time about next one:
 
 Some tries, some search with web... but result anyway about this stuck.
 
-Will play with Snort more....
+Will play with Snort more.... 
+
+stuck mainly was about "uncomment" for the "outdated" rules together with updated-rules.
+
+But I re-check/re-fix and add some else changes to snort.conf (I mean - not just expected ones).
+
+Launch snort and maybe it normally work as IDS; logs also there.
+
+But I have to re-check about certain settings/set-up for good result of Snort-work.
+
+So before experience with metasploit - I have to "play" with Snort more time.
+
+Still not sure that snort configured with enough view/setting and that there is expected set-up.
