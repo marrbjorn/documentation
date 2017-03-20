@@ -303,3 +303,15 @@ But I have to re-check about certain settings/set-up for good result of Snort-wo
 So before experience with metasploit - I have to "play" with Snort more time.
 
 Still not sure that snort configured with enough view/setting and that there is expected set-up.
+
+After some days - I configured Snort maybe with "OK"-view.. 
+
+But with my try to scan ports (and get information about results) - Snort ignore it (or some kind of);
+
+Randomly before my next steps (properly work with Snort and first experience about Metasploit):
+
+I get a little be more, than one week delay.... 
+
+And just with current day I will start to think about continues about this.
+
+Will try to check more about Metasploit and Snort possibilities.
