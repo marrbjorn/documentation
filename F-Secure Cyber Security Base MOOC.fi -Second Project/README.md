@@ -315,3 +315,11 @@ I get a little be more, than one week delay....
 And just with current day I will start to think about continues about this.
 
 Will try to check more about Metasploit and Snort possibilities.
+
+And..... anyway later was else one week delay.
+
+But because there was extending action for course-project-two - so some days it my delay already about two weeks.
+
+Today I get proper time and ability to continue work.
+
+But found that I not able to download Metasploit....... So will play else one time... with this on current time.
