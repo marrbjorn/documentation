@@ -286,7 +286,7 @@ With this step (NIDS-try) I get trouble-stuck about configuration.
 
 On current time about next one:
 
-     ... Missing/incorrect dynamic engine lib specifier. Fatal Error, Quitting ...
+    ... Missing/incorrect dynamic engine lib specifier. Fatal Error, Quitting ...
 
 Some tries, some search with web... but result anyway about this stuck.
 
@@ -323,3 +323,11 @@ But because there was extending action for course-project-two - so some days it 
 Today I get proper time and ability to continue work.
 
 But found that I not able to download Metasploit....... So will play else one time... with this on current time.
+
+After some tricks and tweaks looks like that I able normally use Metasploit.
+
+So, if SNORT will be able to detect such things (which most likely required some else steps :( and configuration):
+
+I just already able to start trying to play with Metasploit more time.
+
+Will be interesting.... but it already take so many time about steps, which (maybe) should be done more briefly. 
