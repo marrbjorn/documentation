@@ -330,4 +330,34 @@ So, if SNORT will be able to detect such things (which most likely required some
 
 I just already able to start trying to play with Metasploit more time.
 
-Will be interesting.... but it already take so many time about steps, which (maybe) should be done more briefly. 
+Will be interesting.... but it already take so many time about steps, which (maybe) should be done more briefly.
+
+# Metasploit
+
+So, based on my set-up I had to re-improve snort.conf and add some of limitation, exception, advanced rules to my setting.
+
+By "setting" I mean full meanings of this Course Project Two (as configuration of system, VMs, Metasploit and Snort).
+
+And this is not really quite good and not common situation. Mostly it should be more properly - if it indeed planned to be in use.
+
+But anyway... as one of example-reasons for re-improve situation (with not totally change full setting):
+
+--> in somewhat reason I tried Metasploit Community (with Pro Trial probably experience will be more friendly).
+
+as result some of additional steps and more "time" for get knowledge about proper using it.
+
+======
+
+After some time of tries, researches and actions - I get and understand some examples of Snort good detection work.
+
+But also about certain situations, when Snort do not trigger something, which can be helpful.
+
+As result - there just increasing of my thoughts about reasonable points of using both "tools":
+
+--> Metasploit;
+
+--> Snort.
+
+And basically with both of them there a lot of abilities do (or not to do) different things.
+
+....
