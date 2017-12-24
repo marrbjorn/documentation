@@ -44,9 +44,9 @@ This is some kind of landing page for music-party/meeting (but mainly it is frie
 
 Each music band/musician is already registered to be part of this party (by design);
 
-Service <ins>**do not**</ins> provides ability to add more bands (this can be covered the other steps);
+Service <ins>**does not**</ins> provides ability to add more bands (this can be covered the other steps);
 
-Service <ins>**do**</ins> provides its own access for each music-band/musician to be able to "invite listeners";
+Service <ins>**does**</ins> provides its own access for each music-band/musician to be able to "invite listeners";
 
 Like "friend" or someone else (some kind of special listeners); 
 
@@ -80,54 +80,52 @@ Mostly covered some of "troubles" in design; But some of them are based on "mean
 - - - -
 HOW TO WORK
 ===========
-First steps as start can be like that:
+First steps as a start:
 <pre>
-When we run application under the IDE - we able to open it under the browser;
-By <strong>default</strong> configuration: available at http://127.0.0.1:8080 
+When we run the application under the IDE - we can to open it under the browser;
+By **default** configuration: available at http://127.0.0.1:8080 
 </pre>
 <hr />
-We will be with default login-page. 
+We will see the default login-page. 
 
-For access to service - we have to be authorized;
+To access the service - we must be authorized;
 
-This is available to do by music-bands' credentials or by admin-access; 
+This possible to do with music-bands' credentials or by admin-access; 
 <pre>
-At this step - if credentials do not known for us - we able to do some of steps for get access:
- -> Fuzz the login forms (if there is not strong passwords/logins);
- --> Fuzz URL-address (if there can be other pages, than login-page or which do not covered by login-page);
- ---> Found something else.
+At this step - if credentials are not known to us - we can do some steps to try to 'find' them:
+ * Fuzz the login forms (like if not strong passwords/logins there);
+ * Fuzz URL-address (like if there may be other pages than login-page or pages not covered by the login-page);
+ * Find something else.
  
  with this kind of project-application - any of this steps will be valid or helpful.
- Or can be additional potential steps (if "credentials" known already).
+ Or there may be additional potential steps (if "credentials" are known already).
 </pre>
-<ul>
-<li>Tools like Burp or OWASP ZAP able to provide ability to configure fuzz-attack for both of meanings.</li>
+* Tools like [Burp](https://portswigger.net/burp) or [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) are able to provide the ability to configure fuzz-attack for both of meanings.
 
-<li>"Other" steps can be with direct attack or knowledge about this service/administrators.</li>
+* "Other" steps may be with direct attack or with knowledge about this service/administrators.
 
-<li>Additional steps covered by situation - if there is "one of registered accounts" do something "malicious".</li>
-</ul>
+* Additional steps are covered by the situation - if "one of registered accounts" does something "malicious".
 
 <hr />
 
-We able to start from trying to find another available pages, than login-form.
+We are able to start from trying to find another available pages than login-form.
 
-Time to time can be "forgotten debug-pages", "consoles", "backdoors" or other.
+Because, time to time, there may be "forgotten debug-pages", "consoles", "backdoors" or other.
 
-Usually this is based on misconfiguration or temporary mistakes;
+Usually based on misconfiguration or temporary mistakes;
 <pre>
-With proper result we able to get "/hidden" page, which looks like development-debug page.
-Mainly as temporary ToDo List at the time, when website was maintaining before release;
+With proper result we were able to get "/hidden" page, which looks like development-debug page.
+Something as temporary ToDo List at the time when website was maintaining before release;
 
-This page was as "exclusion" for temporary-access (by antMatchers.permitAll).
+This page was with "exclusion" for temporary-access (by antMatchers.permitAll).
 As usage Java Spring security config feature http.authorizeRequests().
-And "excluded" from login-form.
+And, as result, "excluded" from login-form.
 
 With this kind of project-application it possible:
--> by mistake (as additional to css-access with not proper design);
--> or specially for "debug", but do not removed after the release;
+-> by mistake (like addition to css-access with not proper design);
+-> or specially for "debug", but does not removed after the release;
 
-So page available at http://127.0.0.1:8080/hidden
+So, page available at http://127.0.0.1:8080/hidden
 
 </pre>
 <b><sub>Mainly this page have css-style-work, which maybe can to create temporary freeze (sorry - if it will be like that);
