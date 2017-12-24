@@ -7,7 +7,7 @@ This is more like "template" (or PoC) than "application".
 
 Also I am not really friendly with development.
 
-So, I decided to do no-frills application and with some kind of "tricks" (just like template-PoC);
+So, I decided to do a no-frills application and with some kind of "tricks" (just like template-PoC);
 
 -------
 
@@ -23,17 +23,16 @@ Setup:
 Get started can be with next steps:
 -----------------------------------
 
-<b>FIRST</b>: we need to be able to work with https://cybersecuritybase.github.io (which means proper configured IDE and other requirements);
+**FIRST**: we need to be able to work with https://cybersecuritybase.github.io (which means proper configured IDE and other requirements);
 
-<br /><strong>SECOND</strong>: download this project ( https://github.com/marrbjorn/CyberSecurityCourse ) as zip-file or by git-commands as usually.
+<br />**SECOND**: download this project ( https://github.com/marrbjorn/CyberSecurityCourse ) as zip-file or by git-commands as usually.
 
-<br /><b>THIRD</b>: unpack it (if you downloaded zip-file) and open the project in the IDE (for example, with Netbeans: "File -> Open Project..." under the menu).
+<br />**THIRD**: unpack it (if you downloaded zip-file) and open the project in the IDE (for example, with Netbeans: "File -> Open Project..." under the menu).
    
     Then do the "Clean and Build Project" (how it is called under the Netbeans);
     this will trigger downloading/creating target-files and properly build project;
 
-<br />
-<strong>FOURTH</strong>: "Run" application when you need to work or required to do some steps with application.
+<br />**FOURTH**: "Run" application when you need to work or required to do some steps with application.
 
     first launch may ask about main class - choose this default one.
     
@@ -45,7 +44,7 @@ This is some kind of landing page for music-party/meeting (but mainly it is frie
 
 Each music band/musician is already registered to be part of this party (by design);
 
-Service <ins>**do not**</ins> provide ability to add more bands (this can be covered the other steps);
+Service <ins>**do not**</ins> provides ability to add more bands (this can be covered the other steps);
 
 Service <ins>**do**</ins> provides its own access for each music-band/musician to be able to "invite listeners";
 
@@ -75,9 +74,9 @@ But main meanings will be with same design.</strong>
 
 Next there are some of steps to play with application-project (to get a view of potential troubles or exploitation);
 
-With Java-files (or html-templates) I also added comments about places which can be fixed (or how can be fixed);
+With Java-files (or html-templates) I also added comments about the places what can be fixed (or how can be fixed);
 
-Mostly covered some of "troubles" in design; But some of them based on "meanings";
+Mostly covered some of "troubles" in design; But some of them are based on "meanings";
 - - - -
 HOW TO WORK
 ===========
