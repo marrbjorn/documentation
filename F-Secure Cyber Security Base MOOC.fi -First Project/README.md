@@ -1,21 +1,21 @@
 Small background:
 -----------------
 
-This is more like "template" (or PoC), than "application" in fact.
+This is more like "template" (or PoC) than "application".
 
-    Design based on my too much small experience with all of this "development"-things;
+    Design is still based on my too much small experience with all of this "development"-things;
 
-Also I not really friendly with development.
+Also I am not really friendly with development.
 
-So I decided to do not hard designed application and with some kind of "tricks" (as can be just like template-PoC);
+So, I decided to do no-frills application and with some kind of "tricks" (just like template-PoC);
 
 -------
 
-Project available at the github page: https://github.com/marrbjorn/CyberSecurityCourse
+* Project available at the github page: https://github.com/marrbjorn/CyberSecurityCourse
 
---> and <a href="https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project">this page</a> will be as documentation of project;
+* and <a href="https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project">this page</a> will be as documentation of project;
 
-and shortcut for <a href="#owasp">Compare to OWASP Top TEN</a>
+* and shortcut for <a href="#owasp">Compare to OWASP Top TEN</a>
 
 
 Setup:
@@ -23,64 +23,62 @@ Setup:
 Get started can be with next steps:
 -----------------------------------
 
-<b>FIRST</b>: we have to be able work with https://cybersecuritybase.github.io (which means proper configured IDE and other requirements);
+<b>FIRST</b>: we need to be able to work with https://cybersecuritybase.github.io (which means proper configured IDE and other requirements);
 
-<br />
-<strong>SECOND</strong>: download this project ( https://github.com/marrbjorn/CyberSecurityCourse ) as zip-file or by git-commands as usually.
+<br /><strong>SECOND</strong>: download this project ( https://github.com/marrbjorn/CyberSecurityCourse ) as zip-file or by git-commands as usually.
 
-<br /><b>THIRD</b>: unpack it (if downloaded zip-file) and open project under the IDE (with Netbeans: "File -> Open Project..." under the menu).
+<br /><b>THIRD</b>: unpack it (if you downloaded zip-file) and open the project in the IDE (for example, with Netbeans: "File -> Open Project..." under the menu).
    
-    Then do the "Clean and Build Project" (how it called under the Netbeans);
+    Then do the "Clean and Build Project" (how it is called under the Netbeans);
     this will trigger downloading/creating target-files and properly build project;
 
 <br />
-<strong>FOURTH</strong>: "Run" application, when required work or required to do some steps with application.
+<strong>FOURTH</strong>: "Run" application when you need to work or required to do some steps with application.
 
     first launch may ask about main class - choose this default one.
     
-<hr />
+- - - -
 DESIGN OF APPLICATION
 =====================
-=====================
 
-There is some kind of landing page for music-party/meeting (but mainly friendly service for music bands);
+This is some kind of landing page for music-party/meeting (but mainly it is friendly service for music bands);
 
-Each music band/musician already registered to be part of this party (by design);
+Each music band/musician is already registered to be part of this party (by design);
 
-Service <ins>do not</ins> provide ability to add more bands (this is can be covered by the other one steps);
+Service <ins>**do not**</ins> provide ability to add more bands (this can be covered the other steps);
 
-Service <ins>do</ins> provide own access for each music-band/musician to be with ability "invite listeners";
+Service <ins>**do**</ins> provides its own access for each music-band/musician to be able to "invite listeners";
 
 Like "friend" or someone else (some kind of special listeners); 
 
-As result there will be list (database with "name" and "phone-number") of listeners, which invited by music-bands;
+As result there will be list (database with "name" and "phone-number") of listeners invited by music-bands;
 
-Service provide ability to see full list of this listeners.
+Service provides ability to see full list of these listeners.
 
-    but this is should be available just for administrators (of party/service/website);
+    but this should be available just for administrators (of party/service/website);
     
-<hr />
+- - - -
 
-There is practically missing any other features or design at work.
-And for critical attacks or total impact there is not so many steps.
+And practically no any other features or design at work.
+So, there are not so many steps for critical attacks or total impact.
 
-      but this is do not remove points that:
-        -> "vulnerable" things and 
-        -> "vulnerable" design of things
+      but such design does not remove the points that:
+        ->>> "vulnerable" things and 
+        ->>> "vulnerable" design of things
       will add vulnerabilities or troubles to application. 
-       and this is:
-        -> can be "exploited" or 
-        -> not (but with potential ability do that).
+       and this:
+        ->>> can be "exploited" or 
+        ->>> not (but with a potential ability to be used).
 
 <strong>This project will be with improve design and additional features later.
 But main meanings will be with same design.</strong>
 
-There is some of steps to play with application-project (for get view of potential troubles or exploiting it);
+Next there are some of steps to play with application-project (to get a view of potential troubles or exploitation);
 
-Under the Java-files (or html-templates) I also added comments about places, which can be fixed (or how can be fixed);
+With Java-files (or html-templates) I also added comments about places which can be fixed (or how can be fixed);
 
-This is mostly covered some of "troubles" in design; But some of them based on "meanings";
-<hr />
+Mostly covered some of "troubles" in design; But some of them based on "meanings";
+- - - -
 HOW TO WORK
 ===========
 First steps as start can be like that:
