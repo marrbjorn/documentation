@@ -15,7 +15,7 @@ So, I decided to do a no-frills application and with some kind of "tricks" (just
 
 * and <a href="https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project">this page</a> will be as documentation of project;
 
-* and shortcut for <a href="#owasp">Compare to OWASP Top TEN</a>
+* also shortcut for <a href="#owasp">Compare to OWASP Top TEN</a>
 
 
 Setup:
@@ -44,7 +44,7 @@ This is some kind of landing page for music-party/meeting (but mainly it is frie
 
 Each music band/musician is already registered to be part of this party (by design);
 
-Service <ins>**does not**</ins> provides ability to add more bands (this can be covered the other steps);
+Service <ins>**does not**</ins> provides ability to add more bands (this can be covered by the other steps);
 
 Service <ins>**does**</ins> provides its own access for each music-band/musician to be able to "invite listeners";
 
@@ -83,7 +83,7 @@ HOW TO WORK
 First steps as a start:
 <pre>
 When we run the application under the IDE - we can to open it under the browser;
-By **default** configuration: available at http://127.0.0.1:8080 
+By <strong>default</strong> configuration: available at http://127.0.0.1:8080 
 </pre>
 <hr />
 We will see the default login-page. 
@@ -128,8 +128,8 @@ With this kind of project-application it possible:
 So, page available at http://127.0.0.1:8080/hidden
 
 </pre>
-<b><sub>Mainly this page have css-style-work, which maybe can to create temporary freeze (sorry - if it will be like that);
-this is based on some of CSS-tutorials on web.</sub></b>
+<b><sub>This page with certain css-style and maybe with potential temporary freeze (sorry - if it will be like that);
+It is based on some of CSS-tutorials from web. I tried with multiple platforms and mostly all is OK.</sub></b>
 
 Hidden-page directly have meanings that should be available just for administrators (or service) team.
 
