@@ -131,117 +131,116 @@ So, page available at http://127.0.0.1:8080/hidden
 <b><sub>This page with certain css-style and maybe with potential temporary freeze (sorry - if it will be like that);
 It is based on some of CSS-tutorials from web. I tried with multiple platforms and mostly all is OK.</sub></b>
 
-Hidden-page directly have meanings that should be available just for administrators (or service) team.
+Hidden-page directly has meanings that should be available only to administrators (or service) teams.
 
-And this is looks like ToDo-list with entry-strings about some of things. 
+And this page looks like a ToDo-list with entry-strings about some things. 
 
-Page in somewhat reason do not removed or (denied) after temporary-access-debug-time.
+The page was not removed, deleted or 'denied' for some reasons after temporary access-debug-time.
 
+With this page we were able to get more interesting (or useful) information:
 
-With this page we able to get more interesting (or helpful) information:
-<ul>
-<li>There is note "do not forget remove page or do deny access";</li>
-<q><strong> ^ -> not completed there. so... maybe other things too.</strong></q>
-<li>There is special URL for some of src-files, which also ask for credentials;</li>
-<q><strong> ^ -> most likely there is can be "access-right"-check.</strong></q>
-<li>There is note "do not forget re-change debug admin:admin credentials";</li>
-<q><strong> ^ -> if page do not "disabled" - so maybe credentials too. </strong></q>
-<li>There is note "do not forget update CMS-framework";</li>
-<q><strong> ^ -> looks like that build of this CMS-framework was with known vulnerability;</strong></q>
-<li>And some other entry-strings;</li>
-</ul>
+* There is a note "do not forget to remove page or do deny access";
+  * <q><strong> ^ -> not completed. so, maybe other things too.</strong></q>
+* There is a special URL for some of src-files which also ask for credentials;
+  * <q><strong> ^ -> most likely there should be an access-rights check.</strong></q>
+* There is a note "do not forget re-change debug admin:admin credentials";
+  * <q><strong> ^ -> if the page is not "disabled" - so - maybe credentials too. </strong></q>
+* There is a note "do not forget update CMS-framework";
+  * <q><strong> ^ -> looks like that build of this CMS-framework was with a known vulnerability;</strong></q>
+* And some other entry-strings;
+
 <pre>
- So after this result with found the hidden-page.
- And as additional potentially points with:
+After the hidden-page was found.
+And with additional potential points as:
+
   -> debug credentials (admin:admin);
-  which maybe do not changed.
+   which may still be valid.
  
-  -> URL for page with some of src-files as review-ask other team 
+  -> URL to page with 'src-files' as ask for review from another team 
       ( http:/127.0.0.1:8080/formsrc?review=on );
-   which also covered by login-form.
-   and probably have some of protection-layers;
+   which is also covered by the login-form.
+   and may be with some other protection-layers;
  
-  -> information about CMS Framework 
-      (and that there was in use vulnerable build of this CMS);
-   with this kind of project:
-we will go to think that there is:
-  known CMS and 
-  known vulnerability for this CMS;
-and design of vulnerability is:
-  known "backdoor"-access credentials (as administrator-rights account);
-Usually known vulnerabilities can be visible under the web:
-  any websites, 
+   -> information about CMS Framework 
+      (and that vulnerable build of this CMS was in use);
+    with this kind of project:
+ we will go to think that there are
+   known CMS and
+   known vulnerability for this CMS;
+ and design of vulnerability is
+   publicly known "backdoor"-access credentials (as administrator-rights account);
+
+Usually to see/find known vulnerabilities you can check:
+  official websites, 
   cve-lists, 
   advisories and 
   other.
  
- So maybe this CMS Framework build also still not updated.
-  "brief-search" for this vulnerability give the result that backdoor-credentials (CMS:CMSpassword).
+ So, maybe this CMS Framework build is also still not updated.
+   "brief-search" for this vulnerability gives the result that backdoor-credentials are (CMS:CMSpassword).
 </pre>
 
-So, we have some information and able to try do something.
+So, we have some information and the ability to try to do something.
 
-"src"-page covered by login-form (and looks like STRING-check under the parameter query by GET-method);
+"src"-page is covered by login-form (and looks like there is STRING-check under the parameter query by GET-method);
 
-There is possible some steps: if "registered"-account will try to open this URL; anyone else; admin-account or some of tricks.
+Available some of steps: "registered"-account will try to open this URL; anyone else; admin-account or some of tricks.
 
-So we able to check if CMS Framework not updated and check "backdoor"-credentials from outdated build.
+So, we are able to check: what if CMS Framework is not updated and to try to use "backdoor"-credentials from outdated build.
 
-Open from "/hidden" page URL with "src"-files and get login-form.
+Open the URL with "src"-files from "/hidden"-page and get login-form.
 
-Type there "CMS"-as-login and "CMSpassword"-as-password;
+Type "CMS"-as-login and "CMSpassword"-as-password;
 
-So we get access denied.... most likely there is check for something (but credentials are valid).
+So, we'll get access denied.... most likely there is a check for something (but credentials are valid).
 
-Go back to hidden page (and to src-review page after) or from login-form..
+Go back to hidden page (and then to src-review page) or from login-form directly (good to 'clear' session).
 
 and try to use "admin:admin" for this special-src page.
 
-Page is loaded and we get view of some src-file. Looks like html-template for some of pages.
+Page is loaded and we got view of some src-file. Looks like it is html-template for some page.
 
 <pre>
-This page should be work as temporary storage for src-files as review-action by other team;
+This page should work as temporary storage for src-files to be reviewed by another team;
 
-Most likely randomly page do not removed.
-But mainly there is have some of "layers" of protection-access
-(but not too much proper and valid for this situation);
+Most likely randomly the page has not been removed.
+Even there are some of the "layers" of protection-access
+(but is not too much proper and valid for this situation);
 
-So based on knowledge of admin-debug-credentials (from forgotten debug-page):
-we able to review src of html-template file.
+As a result of knowledge about admin-debug-credentials (from forgotten debug-page):
+we are able to review src of html-template file.
 </pre>
 <hr />
 
-We can directly study this html-template src-file or will try to login and check what service able to do.
+We can directly study this html-template src-file or try to log in and check what can be done on the service.
 
-Stay opened src-file page and go open fresh tab with login-form.
+Do not close the page with src-file and open a fresh tab with the login-form.
 
-And go to use any of already known for us credentials (admin:admin or CMS:CMSpassword).
+And use any of the credentials already known to us (admin:admin or CMS:CMSpassword).
 
-Most likely there is can be other not strong passwords (by some of music band accounts).
+Possible to suspect that there may be other not strong passwords (music band's account).
 
-But mainly (with current try) we able to think that music bands will use "strong" passwords.
+With current try - we are able to think that music bands with "strong" passwords.
 
-But also able to think that "design" of handling this passwords can be with some troubles.
+<pre>So, with login-page http://127.0.0.1:8080  and valid credentials</pre>
 
-<pre>So with direct usage login-form for http://127.0.0.1:8080  and valid credentials</pre>
-
-We able to get form-page like welcome-page.
+We are able to get form-page; something like welcome-page.
 
       http://127.0.0.1:8080/form
 
-There have ability to read information-words and invite listener (as music band's friend or other);
+Where possible to read information-words and invite a listener (as music band's friend or other);
 
-Go do "enter" from first! Ok, we get information that there is required name-field.
+Go check "enter" from first! Ok, we got information that name-field is required.
 
-So fill it and we able do not fill "phone"-page. 
+So, fill it and we were able do not fill "phone"-field.
 
-Or goes try to fill it (or both) with tricks like "html-tags or scripts"
+But go try to fill it (or both of them) with tricks like "html-tags or scripts"
 
-So with this step <code>name</code> can be (as "alert" script usage): 
+So, with this step <code>name</code> can be (as "alert" script): 
 
      <script>alert('name')</script>
 
-And <code>phone</code> can be (as "alert" script usage):
+And <code>phone</code> can be (as "alert" script):
 
      <script>alert('phone')</script>
      
@@ -249,23 +248,22 @@ Fill it and transfer to application.
 
 We get result-page of this action, where information-words and menu with three URLs:
 
-<ul>
-<li> Add some else listeners;</li>
-<li> Re-login;</li>
-<li> And strange named URL</li>
-</ul>
+* Add some else listeners;
+* Re-login;
+* And strange named URL (?!);
+
 <hr />
 
 <pre>
-With this step we able back to known page with src-file.
-And check it.
+In this step we can return to known page with src-file.
+And review it.
 
-We able to found there potential trouble with handling output data from database about phones.
+Possible to see potential trouble with handling output data from database about phones.
 
-There visible that in somewhat reasons output text for phones comes as "unescaped text".
-By the usage Thymeleaf (Java/HTML template engine) features.
+There visible that for somewhat reasons output text for phones comes as "unescaped text".
+Based on the usage Thymeleaf (Java/HTML template engine) features.
 
-Which time to time can be helpful - but not sure - that it can be helpful there.
+In certain situations this can be useful - but not sure - that it can be helpful there.
 
 Looks like that:
 </pre>
@@ -274,177 +272,174 @@ Looks like that:
     
 <code>th:utext</code> probably comes there randomly (or for temporary debug);
 
-This situation will create potential ability to do <strong>Cross-Site Scripting (XSS)</strong>
+This situation will create a potential ability to do <strong>Cross-Site Scripting (XSS)</strong>
 
-Name field have proper output handling as <code>th:text</code> (escaped text).
+Name field with proper output handling as <code>th:text</code> (escaped text).
 
-So.. with previous fill-action will be situation, when someone able to see list of listeners:
+So, with previous fill-action will be the situation that when someone is able to see list of listeners:
 
- -> there will be alert from "phone"-field (and visible "string" under the "name"-field).
+he will get an alert from "phone"-field (and "string" under the "name"-column).
 
-But this troublepoint possible to use for any other actions and reasons.
+This troublepoint possible to use for any other actions and reasons (with larger impact).
 
-Looks like that page with table of all listeners can be there....
+Looks like that it is a page with full table of listeners.
 
-Or just because it asked for review - maybe under the debugging.
+And just because it was asked for review - maybe under the debugging.
 
 -------
 
-So back to the dreams about "strange named URL" under the "thanks-menu" after the transferring listener.
+So, back to the dreams about "strange named URL" under the "thanks-menu" after transferring listener.
 
-There have strange words as: <q><strong>Do you remember fylkr's song "do The Trick" from album "trick"?</strong></q>
+URL's menu-description with strange words: <q><strong>Do you remember fylkr's song "do The Trick" from album "trick"?</strong></q>
 
-and URL (page which can not be displayed) for 
+and URL (page which can not be displayed) to 
 
 <pre>http://127.0.0.1:8080/fylkr</pre>
 
-We also able to find that under the "form-thanks" html-page (as src of page) for this URL/menu-tab have next strings:
-           
+We are also able to find that under the "form-thanks" html-page (as src of page) for this URL/menu-tab there are the next strings:
            
       <div sec:authorize = "hasAuthority ('ADMIN')">
 
-Which should means that current point have to be visible just for admins... but there is mistake with design.
+Which should means that current point should only be visible to admins... but there is a mistake with the design.
 
-So this is visible for all.
+So, this 'entry' is visible for all.
 
-Most likely that there is can be else one temporary-debug or under-construction page.
+Possible to suspect that it is else one temporary-debug (or under-construction) page.
 
-And with knowledge that there is mistake and page can be there (and most likely strange words is tips):
+And knowing that there is mistake and page might be there (and most likely strange words are tips):
 
- -> we able to start thinking around.
+we are able to start thinking around.
 
-There was already some pages with "string"-checks under the GET-methods.
+There were already some pages with "string"-checks under the GET-methods.
 
-And looks like there is can be something around it.
-We able to re-login under the admin credentials.
+And it looks like there might be something around it.
+We can re-login with admin credentials.
 
-But because there is already mistake with check-about - so maybe page will be allowed to all too.
+But because there is already a mistake with checks - so - maybe the page will be available to anyone.
 
 <pre>
-We have potential debug-URL with debug-tips.
+We have a potential debug-URL with debug-tips.
 
-Words says about fylkr's song (and URL have /fylkr  page-name) song "do The Trick" from album "trick".
-Go to think that there is tips how to do GET-query or how should be looks like URL for proper result.
+Words says about fylkr's song (and URL with /fylkr page-name) song "do The Trick" from album "trick".
+Go to think that there are tips about how to do build a GET-query or how URL should looks like for proper result.
 
-After some tries... we able to get proper configuration for this:
+After some tries we were able to get proper configuration for this:
 
 http://127.0.0.1:8080/fylkr?trick=doTheTrick 
 </pre>
 
-If we open this URL after previous actions.. so we get firstly alert.
+When we open this URL after previous actions - firstly - we get an alert.
 
-And after that full table (under the HTML template) with all invited listeners.
+And after that we will get a full table with all invited listeners.
  <sub>(Donald Duck included, where "Donald" is name  and "Duck" is phone)</sub>
 
 In fact - page should be visible just for administrators.
 
 Looks like that there is just one protection-layer: GET / "parameter"-string from user's browser.
 
-For this type of "hidden" page can be more protection in fact.
-
+For this type of "hidden" pages should be more protection in fact.
 
 <hr />
 
 MEANINGS
 ========
 
-This project-application have some kind of troubles, vulnerable points and not proper usage design things.
+This project is an application with some troubles, vulnerable points and misuse of the design of things.
 
-All of this things (and tricks) will do ability to exploit it.
+All these points (and tricks) make it possible to exploit it.
 
-Mainly with this kind of "template/PoC" there missing too much critical exploiting or attack-points.
+Mainly with this kind of "template/PoC" there is missing too much critical exploitation or attack-points.
 
-But this anyway can be visible as "potential" troubles or things, which should be fixed.
+But can be seen as "potential" troubles or things that need to be fixed anyway.
 
-Or which can be critical later...
+Because it can be critical later...
 
-Mainly there is next main troublepoints and additional troubles (which can be less likely exploiting or so visible):
+There is next main troublepoints and additional troubles (which can be less likely with exploitation or not so visible):
 
 <ul>
-<li><code>debug-todo-page do not deleted or properly denied</code></li>
+<li><code>debug-todo-page is not deleted or is not properly denied</code></li>
 <br />
-<li><code>page-for-administrators-only goes be protected just by get-parameter string</code></li>
+<li><code>page-for-administrators-only is protected only by the GET-parameter string</code></li>
 <br />
-<li><code>unescaped text output for phone-field</code></li>
+<li><code>unescaped output-text for phone-field</code></li>
 <br />
 <li><code>csrf-protection (provided by Spring framework) is disabled</code></li>
 <br />
 <li><code>so called "Powerful Custom CMS v2" with known vulnerability</code></li>
 <br />
-<li><code>passwords do not encrypted totally</code></li>
+<li><code>passwords are not encrypted 'at all'</code></li>
 <br />
 <li><code>HTTPS is missing</code></li>
 <br />
-<li><code>h2-console is available to be opened with this tries</code></li>
+<li><code>h2-console is available for opening using this our 'internal' tries</code></li>
 <br />
-<li><code>do not added some of proper features</code></li>
+<li><code>some of proper features have not been added</code></li>
 <br />
-<li><code>there is can be some of crash-situation for application</code></li>
+<li><code>there may be some crash-situations</code></li>
 </ul>
 
 About first two points:
 ---
 <pre>
-this is already troublepoint... 
-but also as result there start be visible a lot of other troublepoints.
-like information, which can be critical start be randomly visible.
+it is already a troublepoint... 
+but also, as result, there start be visible a lot of other troublepoints.
+something like critical information has become randomly visible.
 
-also list of all listeners (which should be just for administrators)...
-goes be visible for all, who know proper string.
-there is some of mistakes or not proper usage design 
+also list of all listeners (which should be just for administrators)
+is visible for all who know proper string.
+it is potential mistakes or not proper usage design 
 (or just do not using proper design)...
 
-so as result debug-page (with critical data) is available for all.
+debug-page (with critical data) is available for all.
 
 and page just for administrators:
-do not protected by something more than get-query-string from user's browser.
+is not protected by something more than GET-query-string from user's browser.
 </pre>
 
 About unescaped/escaped text output and CSRF:
 ---
 <pre>
-phone-field with unescaped output text just do ability:
-for exploiting situation by Cross-Site Scripting (XSS).
-　
-and mainly - if there will be more related troublepoints:
-will be more higher risk-usage.
-there is a lot of steps to prevent it (and mainly by frameworks in use - Spring or Thymeleaf);
+phone-field with unescaped output text:
+adds ability for exploiting situation by Cross-Site Scripting (XSS).
 
-by default (with proper usage) Spring Framework will add CSRF-protection enabled.
+if application will be with other related troublepoints:
+will be more higher risk-usage.
+A lot of steps to prevent it (for example, by frameworks in use - Spring or Thymeleaf);
+
+by default (with proper usage) Spring Framework with enabled CSRF-protection.
 　
 There is disabled-status for this feature under the security config.
 　
-But also do not "enabled" CSRF-protection (like tokens) under the html-templates.
+But also does not "enabled" CSRF-protection (like tokens) under the html-templates.
 　
-So there is disabled and not enabled "CSRF-protection"..
-but this is provided by tools in use for this project-application.
+So, there is disabled and not enabled "CSRF-protection"..
 </pre>
 
 About vulnerable "potential" CMS:
 ---
-<pre>there is just "meanings" that this project-application using CMS.
+<pre>This is just "meanings". Just like if this project-application using CMS (v2).
 　
 And this CMS with known vulnerability (backdoor-admin-rights credentials).
 　
-And not updated properly... but current build of "this CMS" is "v5".
+And application is not updated... even current build of "this CMS" is "v5".
 　
-So.. too much outdated in fact. :) 
+So, too much outdated in fact. :) 
 </pre>
 
 About the other points:
 ---
 <pre>
-Passwords there is not encrypted. Not protected properly.
+Passwords are not encrypted. Not protected properly.
 If there will be access to database (or hack it):
-so it will be just passwords with normal view.
+it will be just passwords with normal view.
 
-HTTPS is missing - so mainly:
-there is can be visible all things between browser/application with less steps to do trick.
+HTTPS is missing - so:
+can be visible all things between browser/application with less steps to do trick.
 
 default console-access for build-in SQL/hibernate database is enabled:
 and available to be opened with this tries.
 
-there is a lot of features, which do not added yet:
+there are a lot of features, which do not added yet:
 Like "logout"-points and many other proper things.
 
 design of some steps will create potential crash-situation. 
