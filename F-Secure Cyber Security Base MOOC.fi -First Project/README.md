@@ -205,7 +205,7 @@ This page should work as temporary storage for src-files to be reviewed by anoth
 
 Most likely randomly the page has not been removed.
 Even there are some of the "layers" of protection-access
-(but is not too much proper and valid for this situation);
+(but is not too much proper and is not valid for this situation);
 
 As a result of knowledge about admin-debug-credentials (from forgotten debug-page):
 we are able to review src of html-template file.
@@ -320,7 +320,7 @@ But because there is already a mistake with checks - so - maybe the page will be
 <pre>
 We have a potential debug-URL with debug-tips.
 
-Words says about fylkr's song (and URL with /fylkr page-name) song "do The Trick" from album "trick".
+Words says about fylkr's (and URL with /fylkr page-name) song "do The Trick" from album "trick".
 Go to think that there are tips about how to do build a GET-query or how URL should looks like for proper result.
 
 After some tries we were able to get proper configuration for this:
@@ -434,48 +434,48 @@ If there will be access to database (or hack it):
 it will be just passwords with normal view.
 
 HTTPS is missing - so:
-can be visible all things between browser/application with less steps to do trick.
+can be visible all things between browser/application with less steps to do the trick.
 
 default console-access for build-in SQL/hibernate database is enabled:
-and available to be opened with this tries.
+and available to be opened with this 'internal' tries.
 
-there are a lot of features, which do not added yet:
-Like "logout"-points and many other proper things.
+there are many features that have not been added yet:
+For example, "logout"-points and many other required things.
 
-design of some steps will create potential crash-situation. 
-Time to time this is can be too much critical.
+design of some steps will create a potential crash-situation. 
+Time to time this may be too much critical.
 </pre>
 <hr />
 <hr />
 
 <h1 id="owasp"><ins>Compare to OWASP Top TEN</ins></h1>
 
-This project application can be vulnerable for some kind of attacks.
-Or can be with vulnerabilities, troublepoints or mistakes.
+This project application may be vulnerable to some kind of attacks.
+Or may be with vulnerabilities, troublepoints or mistakes.
 
-Compare to OWASP and their Top Ten ( https://www.owasp.org/index.php/Top_10_2013-Top_10 ) there is can be next ones:
+Compared to OWASP and their Top Ten 2013 ( https://www.owasp.org/index.php/Top_10_2013-Top_10 ) here may be the next ones:
 
 <b>Broken Authentication and Session Management</b> <strong>||</strong> <b>Sensitive Data Exposure</b>
 
   <pre>as OWASP A2 and OWASP A6</pre>
 
-There is do not totally proper work with passwords (encryption or hashing is missing; and stored not encrypted passwords);
+There is totally not a proper work with passwords (encryption or hashing is missing; and not encrypted passwords are stored);
 
-Missing encryption between application and browser (visible under the browser-console and HTTP-protocol).
+Missing encryption between application and browser (visible under the browser-console and as HTTP-protocol).
 
-This will be more visible by using sniffers. Or with popular software for analysing web-traffic (liek Wireshark);
+It is will be more visible by using sniffers. Or with popular software for analysing web-traffic (like Wireshark);
 
-Do not handled logout and some other related things. As result stuck for "session"-access;
+Not handled logout and some other related things. As result stuck for "session"-access;
 
-For fix this points - we able (as example) to use features, which provided by Spring Framework.
+For fix this points - we are able (as example) to use features, which provided by [Spring Framework](https://spring.io/).
 
-I add comments for project-application with places, which can be removed or added.
+I added comments for project-application with places that can be removed or added.
 
-Mainly there we able to use "encryption"-methods for passwords and store it as encrypted ones (properly).
+Mainly there we are able to use "encryption"-methods for passwords and store it as encrypted ones (properly).
 
-Good to use secure connection also. 
+Good to use secure connection (TLS) also. 
 
-Also there is some kind of potential situation for "hack" password database.
+Also there is potential situation for "hack" password database.
 <hr />
 
 <b>Cross-Site Scripting (XSS)</b>
@@ -488,13 +488,13 @@ Which goes be under the table of all listeners.
 
 For prevent it with current project-application:
 
-we able to use "Thymeleaf" (Java/HTML template engine) with proper configuration about.
+we were able to use "Thymeleaf" (Java/HTML template engine) with proper configuration about.
 
-I also add comments about "potential" fix under the project-application.
+I also added comments about "potential" fix under the project-application.
 
-Mainly there will be enough re-change "th:utext" to "th:text" under the fylkr.html-template.
+Mainly it should be enough to re-change "th:utext" to "th:text" under the fylkr.html-template.
 
-So to use this troublepoint will be not so visible.
+So, potential Cross-Site Scripting attack will require more actions, steps and trick. 
 <hr />
 
 <b>Security Misconfiguration</b>
@@ -503,21 +503,21 @@ So to use this troublepoint will be not so visible.
 
 This is main troublepoint for current project-application.
 
-Start from this - we able to get some more things.
+Start from this - we are able to get some more things.
 
-But there is already have some of critical (in common sense) things like:
+But it is already with some of critical (as common sense) things like:
 
-default-debug admin credentials (admin:admin); 
+- default-debug admin credentials (admin:admin); 
 
-unused debug pages with critical information ("/hidden"); 
+- unused debug pages with critical information ("/hidden"); 
 
-unpatched tools in use ("potential" CMS);
+- unpatched tools in use ("potential" CMS);
 
-default SQL/hibernate console is opened;
+- default SQL/hibernate console is opened;
 
-do not properly handling crash-situation;
+- is not properly handling crash-situation;
 
-some designs not properly used and other;
+- some designs are not properly used and other;
 
 <hr />
 
@@ -525,17 +525,17 @@ some designs not properly used and other;
 
 <pre> OWASP A7</pre>
 
-There is possible get visible information about "content, which not planned to be visible";
+Possible to get and see information about "content, which not planned to be visible";
 
-And also possible just to use "user's browser" and action for get content, which should be covered.
+And for this is possible to use only "user's browser" and action for GET content (which should be covered).
 
-Not enough check, protection-checks and some mistakes with design it.
+Not enough checks, protection-checks and also some mistakes with design it.
 
 Most of this places - I noted under the project-application.
 
-There is possible do a lot of steps (different ones) and required to choose...
+To fix it - possible to do a lot of steps (different ones) and required to choose...
 
-Usually this is based on "design" of application.
+Usually based on "design" of application.
 
 <hr />
 <b> Cross-Site Request Forgery (CSRF) </b>
@@ -544,38 +544,36 @@ Usually this is based on "design" of application.
 
 There is not properly designed CSRF-protection.
 
-With current project-application there is not so many steps to critical-exploiting this.
-
-But there is have possibilities around.
+With current project-application - possible to perform some tricky POC-steps to exploiting this.
 
 Mainly based on "csrf.disabled" feature.
 
-For prevent it - we able use default security config feature by Spring Framework.
+For prevent it - we were able to use default security config feature by Spring Framework.
 
-Or do additional check/protection under the templates (Spring/Thymeleaf) or another steps.
+Or add additional checks/protection under the templates (Spring/Thymeleaf) or another steps.
 
 I added notes for project application about this places (mostly).
 
-We able do the "html"-template (or html-string) for "POST"-form to add "listener";
+As exploit-view: we are able to do the "html"-template (or html-string) for "POST"-form to add "listener";
 
-This is can be more critical with "Cross-Site-Scripting" trouble.
+It is can be more critical with "Cross-Site-Scripting" trouble.
 
-There is can be "description", but I will think to provide "extended" build of project.
+Possible to provide certain "description", but I will think to provide "extended" build of project.
 
-Where CSRF-troublepoint with will be with more interesting design (or some kind of this).
+Where CSRF-troublepoint will be with more interesting design (or some kind of this).
 
 <hr />
 <b> Using Components with Known Vulnerabilities</b>
 
 <pre>as OWASP A9</pre>
 
-For this project-application we able to think that there is some of "CMS" in use.
+For this project-application we were able to think that there is some of "CMS" in use.
 
 And this "CMS build" with known vulnerability.
 
 Where is "known" backdoor-admin-account credentials.
 
-CMS not updated and "account" not disabled.
+CMS is not updated and "account" is not disabled.
 <hr />
 <hr />
 
