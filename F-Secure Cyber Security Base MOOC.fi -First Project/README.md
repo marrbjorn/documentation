@@ -497,6 +497,20 @@ And this CMS with known vulnerability (backdoor-admin-rights credentials).
 And application is not updated... even current build of "this CMS" is "v5".
 　
 So, too much outdated in fact. :) 
+
+Another point is 'outdated' templated (provided by course).
+
+Possible to launch depedency-check ( https://www.owasp.org/index.php/OWASP_Dependency_Check )
+how it was explained with course series.
+
+as result - possible to see that some of dependecies with known vulnerabilities.
+
+for example, outdated builds/dependencies:
+logback-core-1.1.7.jar ; tomcat-embed-core-8.5.7.jar ; groovy-2.4.7.jar - spring-boot-1.4.2
+
+but, of course, it is not always applied to all applications with this outdated dependecies.
+
+possible that vulnerabilities are unrelated with application's design.
 </pre>
 
 About the other points:
