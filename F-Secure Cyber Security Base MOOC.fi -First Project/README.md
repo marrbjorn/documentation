@@ -19,11 +19,11 @@ So, I decided to do a no-frills application and with some kind of "tricks" (just
 
 -------
 
-* Project available at the github page: https://github.com/marrbjorn/CyberSecurityCourse
+* Project available on the github page: https://github.com/marrbjorn/CyberSecurityCourse-2017
 
 * and <a href="https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project">this page</a> will be as documentation of project;
 
-* also shortcut for <a href="#owasp">Compare to OWASP Top TEN</a>
+* also shortcut for <a href="#owasp">Compare to OWASP Top TEN</a>;
 
 
 Setup:
@@ -33,7 +33,7 @@ Get started can be with next steps:
 
 **FIRST**: we need to be able to work with https://cybersecuritybase.github.io (which means proper configured IDE and other requirements);
 
-<br />**SECOND**: download this project ( https://github.com/marrbjorn/CyberSecurityCourse ) as zip-file or by git-commands as usually.
+<br />**SECOND**: download this project ( https://github.com/marrbjorn/CyberSecurityCourse-2017 ) as zip-file or by git-commands as usually.
 
 <br />**THIRD**: unpack it (if you downloaded zip-file) and open the project in the IDE (for example, with Netbeans: "File -> Open Project..." under the menu).
    
@@ -133,8 +133,7 @@ With this kind of project-application it possible:
 -> by mistake (like addition to css-access with not proper design);
 -> or specially for "debug", but does not removed after the release;
 
-So, page available at http://127.0.0.1:8080/hidden
-
+So, page available at http://127.0.0.1:8080/hidden 
 </pre>
 <b><sub>This page with certain css-style and maybe with potential temporary freeze (sorry - if it will be like that);
 It is based on some of CSS-tutorials from web. I tried with multiple platforms and mostly all is OK.</sub></b>
@@ -250,7 +249,7 @@ So, with this step <code>name</code> can be (as "alert" script):
 
 And <code>phone</code> can be (as "alert" script):
 
-     <script>alert('phone')</script>
+     <script>alert(document.cookie)</script>
      
 Fill it and transfer to application.
 
@@ -336,7 +335,7 @@ After some tries we were able to get proper configuration for this:
 http://127.0.0.1:8080/fylkr?trick=doTheTrick 
 </pre>
 
-When we open this URL after previous actions - firstly - we get an alert.
+When we open this URL after previous actions - firstly - we get an alert. With xsrf-token-cookie.
 
 And after that we will get a full table with all invited listeners.
  <sub>(Donald Duck included, where "Donald" is name  and "Duck" is phone)</sub>
@@ -346,6 +345,42 @@ In fact - page should be visible just for administrators.
 Looks like that there is just one protection-layer: GET / "parameter"-string from user's browser.
 
 For this type of "hidden" pages should be more protection in fact.
+
+Then possible to play around CSRF and perform redirect.
+
+Someone is reported about potential vulnerable points and it is placed with next URL:
+
+    http://127.0.0.1:8080/csrfiner
+    
+Where textarea with PoC-example (html-template). Possible to get this content and to create .html-file;
+
+Then possible to use it with both meanings: against GET-method and against POST-method;
+
+With first form: we are able to add URL and redirect is happened.
+
+With second form: required to capture XSRF-token-cookie (possible with cross-site-scripting);
+
+With our tries - possible to get xsrf-token-cookie from browser's console. Then fill "name", "phone" and xsrf-token.
+
+With "Go!"-button -> fresh listener is added. 'broken' csrf protection.
+
+There enabled CSRF-protection, but with specific option as:
+
+    csrfTokenRepository(CookieCsrfTokenRepository);
+
+As result will be something like "CSRFtoken as cookie";
+
+As feature - this is can be helpful and good.
+
+But it is also with additional "option"; so result will be as:
+
+    http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()); 
+
+This will trigger situation that if application will be with Cross-site-scripting troublepoint:
+
+should be possible to get CSRF-token (based on disabled HttpOnly for this Csrftoken-cookie);
+
+And open redirect is part of mapping-feature. With 'trouble'-design.
 
 <hr />
 
@@ -371,13 +406,17 @@ There is next main troublepoints and additional troubles (which can be less like
 <br />
 <li><code>unescaped output-text for phone-field</code></li>
 <br />
-<li><code>csrf-protection (provided by Spring framework) is disabled</code></li>
+<li><code>csrf-protection (provided by Spring framework) with 'broken' design</code></li>
 <br />
 <li><code>so called "Powerful Custom CMS v2" with known vulnerability</code></li>
+<br />
+<li><code>Mapping feature with 'unvalidated redirect'-trouble based on trouble-design</code></li>
 <br />
 <li><code>passwords are not encrypted 'at all'</code></li>
 <br />
 <li><code>HTTPS is missing</code></li>
+<br />
+<li><code>"http.cors()" with disabled status and "http.headers()" with custom partly trouble-design</code></li>
 <br />
 <li><code>h2-console is available for opening using this our 'internal' tries</code></li>
 <br />
@@ -414,13 +453,39 @@ if application will be with other related troublepoints:
 will be more higher risk-usage.
 A lot of steps to prevent it (for example, by frameworks in use - Spring or Thymeleaf);
 
-by default (with proper usage) Spring Framework with enabled CSRF-protection.
-　
-There is disabled-status for this feature under the security config.
-　
-But also does not "enabled" CSRF-protection (like tokens) under the html-templates.
-　
-So, there is disabled and not enabled "CSRF-protection"..
+CSRF protection is enabled with project (by Spring framework);
+ 
+With this design - covered mainly only POST/DELETE request forms. And ignored GET-request forms.
+
+If we would like to use csrf-token for GET-request forms - possible to add it with HTML template;
+
+Thymeleaf will provide this feature. And I 'tried' to use it as input-hidden form.
+ 
+Generally, this is worst design - because GET-method for critical things.... not nice.
+ 
+Then CSRF protection with certain setting about cookie/csrf-token (with HttpOnly-disabled).
+ 
+As result - possible to get this kind of "cookie" by scripts.
+ 
+So, CSRF protection for POST-request forms is works. And kind of csrf-tokens for GET-requests.
+ 
+But we are able to do CSRF-attack for this GET-request form (anyway).
+
+And we are able to do CSRF-attack for POST-request form - if "csrf-tokens" will be known for us.
+
+With Cross-Site-Scripting trouble under the project-application - quite likely to perform it.
+ 
+So, we are able to exploit and did the CSRF attack with this project-application based on points:
+ 
+GET-request forms do not really protected by CSRF-tokens;
+
+POST-request forms vulnerable if possible to get csrf-token (by using Cross-site-scripting as example).
+ 
+Some of this points can be more visible, when we add log-out 
+(on current time there is "mapping" and "add listener");
+ 
+Also with enabled CSRF protection and with default state about database-console:
+hibernate/h2-console access will be 'broken' based on points that CSRF-tokens is missing with login there;
 </pre>
 
 About vulnerable "potential" CMS:
@@ -452,6 +517,17 @@ For example, "logout"-points and many other required things.
 
 design of some steps will create a potential crash-situation. 
 Time to time this may be too much critical.
+
+http.headers() is implemented with partly broken design. also http.cors() with disabled state.
+http.headers().defaultsDisabled().contentTypeOptions() only;
+Potential content sniffing is valid! 
+Also as addition to "form.html" where we used 'title' before meta-charset-tag.
+
+Mapping with current view: just kind of "trick"-feature;
+But provides additional steps to "play" with project-application;
+  
+Also partly related with adding another vulnerable point.
+What can be covered as "Trouble Ten" from OWASP TOP TEN list.
 </pre>
 <hr />
 <hr />
@@ -517,7 +593,9 @@ But it is already with some of critical (as common sense) things like:
 
 - default-debug admin credentials (admin:admin); 
 
-- unused debug pages with critical information ("/hidden"); 
+- unused debug pages with critical information ("/hidden");
+
+- disabled good security features like http.cors() and certain http.header().;
 
 - unpatched tools in use ("potential" CMS);
 
@@ -554,7 +632,11 @@ There is not properly designed CSRF-protection.
 
 With current project-application - possible to perform some tricky POC-steps to exploiting this.
 
-Mainly based on "csrf.disabled" feature.
+Mainly based on potential ability to perform it against GET-method.
+
+But also csrf-protection is re-implemented to custom view with xsrf-token-cookie.
+
+Possible to perform it against POST-method (knowing xsrf-token-cookie of session).
 
 For prevent it - we were able to use default security config feature by Spring Framework.
 
@@ -565,10 +647,6 @@ I added notes for project application about this places (mostly).
 As exploit-view: we are able to do the "html"-template (or html-string) for "POST"-form to add "listener";
 
 It is can be more critical with "Cross-Site-Scripting" trouble.
-
-Possible to provide certain "description", but I will think to provide "extended" build of project.
-
-Where CSRF-troublepoint will be with more interesting design (or some kind of this).
 
 <hr />
 <b> Using Components with Known Vulnerabilities</b>
@@ -582,6 +660,21 @@ And this "CMS build" with known vulnerability.
 Where is "known" backdoor-admin-account credentials.
 
 CMS is not updated and "account" is not disabled.
+
+<hr />
+<b> Unvalidated Redirects and Forwards</b>
+
+<pre>as OWASP A10</pre>
+
+The application with "Mapping"-feature with partly broken design.
+
+It get URL (string) from GET-parameter and trying to perform redirect.
+
+So, possible to do any redirects to valid URL.
+
+Good to perform filtering or allow only internal mapping. Do not use 'parameter' from GET-request.
+
+Such as pre-configured list of URLs for mapping.
 <hr />
 <hr />
 
