@@ -60,6 +60,7 @@ So... maybe it is OK, but during my try - their "shop" was not available anyway.
 Thus, I removed VMWare (and uninstalled vagrant plugin for vmware-workstation). And start to try next option-step.
 
 <strong>Main meanings about this try:</strong>
+
 &#8608; If you have (or do able to buy) Vagrant VMWare license (another licence than just VMWare licence);
 
 &#8608; And you are owner of licence for the VMWare Workstation (or maybe other supported solutions);
@@ -67,6 +68,7 @@ Thus, I removed VMWare (and uninstalled vagrant plugin for vmware-workstation). 
        or optionally do able to do some workarounds for VMWare Player with not expected result.
        
 <strong>Most likely you are able to use Packer/Vagrant/Metasploitable3/VMWare setting.</strong>
+
  ---
  ---
  
