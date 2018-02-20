@@ -4,10 +4,10 @@ With Project TWO ( https://cybersecuritybase.github.io/project2/ ) we have to in
 
 And expected option - do this by VM (as example - VirtualBox);
     
-    I have uninstalled VirtualBox some time before (based on a lot of crashes and troubles);
-    And re-place it with VMWare Player.
+    I uninstalled VirtualBox some time before (based on a lot of crashes and troubles);
+    And replaced it with VMWare Player.
 
-Under the Metasploitable3 wiki-page available instruction-steps and requirements.
+Instruction-steps and requirements are available Under the Metasploitable3 wiki-page.
 
     System Requirements:
     ====================
@@ -24,50 +24,49 @@ Under the Metasploitable3 wiki-page available instruction-steps and requirements
     # VirtualBox
     # Internet connection
     
-For me it means that there is small options to launch current VM (not enough powerful Linux machine and not possible under the VM machine).
+For me it means that there are small options to launch current VM (not enough powerful Linux machine and not possible under VMWare Player).
 
-#FIRST TRY
-So I decided to do this by common steps with one of Windows machine (around normal settings).
+<h3><strong>FIRST TRY</strong></h3>
+I decided to try common workaround steps with one of Windows machines (with partly enough hardware configuration).
 
-Also I found that under the metasploitable3-folder we can to use .json-file for VMWare.
+Also, I found under metasploitable3-folder that we can to use .json-file for VMWare.
 
-I did the try to use it.
+So, I tried to use it.
 
-Installation of Packer quite normal and brief-step (also added this to system PATH).
+Installation of Packer is quite normal and brief-step (also I manually added it to system PATH).
 
-Vagrant installation also quickly and added to system PATH by installation-steps. 
+Vagrant installation is also quickly and added to system PATH by installation-steps. 
 
-Reload plugin also normally installed by documentation-steps.
+Reload plugin is also normally installed by documentation-steps.
 
-So brief-try to use it for the VMWare Player shows mistakes (not supported VMWare Player).
+But brief-try to use it with VMWare Player shows mistakes (VMWare PLAYER is not supported).
 
-But it was possible to fix about some of troubles (add some folders to the PATH and get the VMWare VIX and some of plugins/addon-files).
+Even it was possible to fix some parts of trouble (add some folders to the PATH; get the VMWare VIX and some of plugins/addon-files).
 
-All of this resources available from VMWare website/kb-pages. And under the Vagrant documentation (as plugin for VMWare).
+All of this fix-resources are available on VMWare website/kb-pages. And under Vagrant documentation (like plugin for VMWare).
 
-This steps mainly required just for trying use Vagrant for the VMWare Player. And workaround was around proper view.
+These steps are required only for tries to use Vagrant and VMWare Player. And workaround was close to proper view.
 
-But based on other "limitation" (I thought that license-ask about VMWare) - I decided try VMWare Workstation Pro (trial-time) - if it will be more good and work from first.
+But based on another "limitation" of use (I thought that it is licence-ask about VMWare) - I decided to try VMWare Workstation Pro (trial-time) - what if it will be more good and work from first.
 
-With VMWare Workstation PRO (trial-time) and .json-file (metasploitable3) for VMWare --> also with Packer/Vagrant usage - there is quite good result (potentially).
+With VMWare Workstation PRO (trial-time); .json-file (metasploitable3) for VMWare; also with Packer/Vagrant usage - there is quite good result (potentially). And all should work....
 
-But I found that "license-ask" (when we will try to add Vagrant box to the VM) about certain Vagrant design.
+But I found that noted "licence-ask" (when we will try to add Vagrant box to the VM) is about certain Vagrant design.
 
 If we want to use Vagrant and VMWare (supproted VMWare Workstation) - we have to buy license "Vagrant VMWare".
 
-Maybe it OK, but during my try - their "shop" was not available anyway. Payments methods not visible and just missing.
+So... maybe it is OK, but during my try - their "shop" was not available anyway. Payments methods are not visible and just missing.
 
-So - I remove VMWare (uninstall vagrant plugin for vmware-workstation also). And start try next option-step.
+Thus, I removed VMWare (and uninstalled vagrant plugin for vmware-workstation). And start to try next option-step.
 
-<strong>Main meanings about this try can be like that:</strong>
+<strong>Main meanings about this try:</strong>
+&#8608; If you have (or do able to buy) Vagrant VMWare license (another licence than just VMWare licence);
 
---> If you have (or able to buy) Vagrant VMWare license (different with just VMWare license);
+&#8608; And you are owner of licence for the VMWare Workstation (or maybe other supported solutions);
 
---> And you have license for the VMWare Workstation (or maybe officially supported some other solutions);
-
-       or optionally able to do some of workarounds for VMWare Player with not expected result.
+       or optionally do able to do some workarounds for VMWare Player with not expected result.
        
-<strong>Most likely you normally able to use Packer/Vagrant/Metasploitable3/VMWare setting.</strong>
+<strong>Most likely you are able to use Packer/Vagrant/Metasploitable3/VMWare setting.</strong>
  ---
  ---
  
@@ -75,23 +74,23 @@ So - I remove VMWare (uninstall vagrant plugin for vmware-workstation also). And
  
  I installed VirtualBox (latest build).
  
- And with already installed/configured (before this) Packer/Vagrant:
+ Then with already installed and configured (before this) Packer/Vagrant:
  
- I did the try to use packer build for the related metasploitable3 .json-file.
+ I tried to use packer build with related metasploitable3 .json-file.
  
  As result : stuck for SSH-waiting.
  
      ==> virtalbox-iso: waiting for SSH to become available...
      
- After some time (hours maybe) time-out comes and break-the-process.
+ After some time (hours maybe) time-out is comes and break the process.
  
- This step also take some delay with my VMWare experience, but anyway normally work.
+ This step is also take delay with my VMWare experience but anyway with normal result.
  
- So, I decided to re-run this for Virtualbox else one time. But the same result after hours.
+ So, I decided to re-run it with Virtualbox else one time. But also troubleresult after hours.
  
- Basically there was resource-usage, but after that "not" and just stuck for SSH-waiting.
+ Basically, at first there was resource-usage but then "not" and just stuck for SSH-waiting.
  
- Some thought and else one run - anyway stuck.
+ Some thoughts and else one run - anyway stuck.
  
  I decided to re-check situation with editing .json-file;
  
@@ -99,86 +98,85 @@ So - I remove VMWare (uninstall vagrant plugin for vmware-workstation also). And
  
       "headless": false
       
- And with my experience - looks like that there is waiting for boot up (just two minutes) not enough.
+ And with my experience - looks like - that waiting for boot up (just two minutes) is not enough.
  
- At least - when command line already noted waiting for SSH to become available (shortly after the waiting for boot up):
+ At least, when commandline with already noted waiting for SSH (shortly after the waiting for boot up):
  
- There is still installation process about first of steps.
+ there is still installation process about first of steps.
  
- When installation comes and scripts launched under the VM-command line there was visible:
+ When installation completed and scripts are launched under the VM-command line there was visible:
  
- that with try to do something about SSH - there comes a lot of mistakes as output. 
+ that with try to do something about SSH - comes a lot of mistakes as output. 
  
- Not check it more - because decided to try add more "boot-time waiting" and check the result else one time.
+ Not check it more because decided to try add more "boot-time waiting" and check the result else one time.
  
- What if the "ssh"-scripts launched with time, when it not expected and not work "re-launch it" with proper time.
+ what if "ssh"-scripts launched with time when it is not expected and 're-launch' is not work with proper time.
  
- So... I added some time for the "boot up waiting"-option (seven minutes).
+ So... I added some time for "boot up waiting"-option (seven minutes).
  
- Which probably not really related with my situation. There is anyway was delay between this commands.
+ AND probably it is not really related with my situation. There anyway was delay between this commands/results.
  
- And most likely "ssh"-scripts launched anyway (like "re-launch" work - if the boot there with delay).
+ And, most likely, "ssh"-scripts launched anyway ("re-launch" work - if the boot was with delay).
  
- System launched and there is anyway was a lot of mistakes with ssh-cmd-line action (not sure what it was there).
+ Because system is launched and anyway was a lot of mistakes with ssh-cmd-line action (not sure what it was there).
  
  I decided to check more with system "UI". Re-check Firewall rules, re-check folders.
  
- There was missing SSH-clients (OpenSSH under the folders). I decided that maybe it should be there.
+ There was missing SSH-clients (OpenSSH folder). I decided that maybe it should be there.
  
- Mainly because there was Firewall rules for this.
+ Mainly because there was Firewall rules for such destination.
  
- Go to the VM's browser, Google and type OpenSSH (I not really friendly with ssh).
+ Go to the VM's browser, Google and type OpenSSH (I am not really friendly with ssh).
  
       also there was troubles with opening some HTTPS pages.
       metasploitable3 about outdated build of Windows.
-      and there looks like Internet Explorer 8 (or around this).
+      and looks like there is Internet Explorer 8.
       
-      So I start think at this step.. that maybe there is trouble about it.
-      If websites/changes for the HTTPS-setting goes be with broken work for this system already.
-      And some scripts-download/get OpenSSH or other requirements not work.
+      So, I start to think at this step.. that maybe there is trouble about such.
+      If websites/changes for HTTPS-setting goes be with broken work under this system...
+      some scripts-download/get OpenSSH or other requirements may not work too.
       
- Found also that OpenSSH website not about Windows platform mainly.
+ Found also that OpenSSH website is not about Windows platform.
  
- And for the Windows usage there is should be available next URLs (and packages there):
+ And for Windows usage should be available next URL (and packages there):
  
      https://www.mls-software.com
 
-Also get notifiation about "page not available to open" (based on HTTPS).
+Then, I got notifiation about "page is not available" (based on HTTPS).
 
-Re-change protocol to HTTP and get the block page by F-Secure. :)
+Re-change protocol to HTTP and got blockpage by F-Secure. :)
 
     I have to add that my main system (where I try to set up metasploitable3) with F-Secure SAFE installation.
     
-    F-Secure SAFE - F-Secure security solution for home users. With mainly two modules AV and Browsing Protection.
+    F-Secure SAFE - F-Secure security solution for home users. With two modules AV and Browsing Protection.
     
-    Browsing Protection not about just blocking harmful pages and suspicious-rated pages.
+    Browsing Protection is not about just blocking harmful pages and suspicious-rated pages.
     
-    But also there some of features like Content Blocker (mainly as Parental Control feature).
+    But also there are some features like Content Blocker (mainly as Parental Control feature).
     
-    I have use Content Blocker for "restrict" access to "unknown-content" pages. 
+    I use Content Blocker for "restrict" access to "unknown-content" pages. 
     
-    As result F-Secure installation will be block all pages, which unrated by F-Secure yet.
+    As result F-Secure installation will block all pages which unrated (unknown/uncategorized) by F-Secure yet.
     
-    
-And this mls-software page certainly this unrated page by F-Secure (on current time/day).
+And this mls-software page is certainly this unrated page by F-Secure (on current time/day).
 
-Funny point that F-Secure installed under my main system, but also will block (restrict access) under VM's system/browser.
+Funny point that F-Secure is installed under my main system but also will block (restrict access) under VM's system/browser.
 
 Maybe good.
 
-So it was already more visible that maybe it can be reason for SSH-stuck (downloading openssh just not started as example).
+So, it was already more visible that maybe it can be a reason for SSH-stuck (downloading openssh just not started as example).
 
-I turn off Content Blocker feature. And run next try packer build.
+I turn off Content Blocker feature. And run next try (packer build).
 
-Yes, SSH normally started and all next process goes be with good view.
+Yes, SSH is normally started and further process goes be with good view.
 
-BUT.... result comes with some of fresh stuck-points (already two times) and as result:
+BUT.... result comes with some of fresh stuck-points (already second time) and as result:
 
     ==> Builds finished but no artifacts were created.
     
-So I have to try some check-dreams about situation..... and understand what can be stuck-reason with this time.
+So, I have to try some checks about situation and understand what can be stuck-reason with this time.
 
-Lines about potential troubles with not visible reasons yet (for me). 
+Lines about potential troubles with not visible reason yet (for me). 
  
 Fresh stuck was about next strings-result:
 
@@ -191,76 +189,74 @@ Fresh stuck was about next strings-result:
     
 Firstly I tried to search about this lines.
 
-As result I get view that a lot of people get time to time this troublepoint.
+As result I got view that a lot of people get time to time this troublepoint.
 
-And practically each situation with not visible fix (there potentially some workarounds for them).
+And practically each situation with not visible fix (potentially some different workarounds for them).
 
-I start to think that maybe my situation about something else (because some points differently to the situations).
+I start to think that maybe my situation is about something else (because some points with differences).
 
-Also worst points of situation:
+Also worst point of situation:
 
-    that usually about troublepoints with Packer/Vagrant (?) - there tries to say that trouble with Windows.
-    but most of users noted that situation and troublepoints do not related with Windows at all.
-    At least for common view of this.
+    usually about troublepoints with Packer/Vagrant (?) - there tries to say that trouble with Windows.
+    but most of users noted that situation and troublepoints are not related with Windows at all.
+    At least, for common view of this.
  
-So - I decided to check if just "restart" for my main system will be enough.
+I decided to check if just "restart" for my main system will be enough.
 
-I just thought - what if my a lot of tries to do "packer build" get the stuck for VirtualBox or other things.
+Because thought - what if my a lot of tries to do "packer build" triggered stuck for VirtualBox or other things.
 
-I did the restart. I re-run packer build and it normally completed.
+I did the restart. I re-run packer build and it normally completed!
 
-Also I normally add "box" to vagrant.
+Also, I normally added "box" to vagrant.
 
 Next step is "vagrant up"..
 
-With some of check-steps vagrant up normally started, but stable-stuck with trouble result about next point.
+With some of check-steps vagrant up is normally started but stable-stuck with trouble result about next point.
 
     http://sourceforge.mirrorservice.org/w/wa/wampserver/WampServer 2/WampServer 2.2/wampserver2.2d-x64.exe
      
-In somewhat reason this URL will return "Page not found" (this URL under the scripts).
+In somewhat reason this URL will return "Page not found" (this URL from scripts).
 
-As result "vagrant up" do not able complete process normally. Wampserver not installed.
+As result, "vagrant up" do not able complete process normally. Wampserver is not installed.
 
-Will try next points.
+So - I am not sure - why this URL is troublepoint with my experience.
 
-So - I not sure - why this URL troublepoint with my experience.
+Looks like that it is stable "Page Not Found".
 
-Looks like that it stable give the "Page Not Found" with some of my tries (and checks).
+So, it should be known trouble - but I did not find something about it (briefly).
 
-So it should be known - but I not found something about it (briefly).
-
-Decided just did the changes for the "metasploitable3\scripts\installs" about install_wamp.bat
+Thus, I decided just create changes for "metasploitable3\scripts\installs" about install_wamp.bat
 
 
     Re-change this trouble-URL:
     -> http://sourceforge.mirrorservice.org/w/wa/wampserver/WampServer 2/WampServer 2.2/wampserver2.2d-x64.exe
-    to the next URL: 
+    to next URL: 
     -> https://downloads.sourceforge.net/project/wampserver/WampServer 2/WampServer 2.2/wampserver2.2d-x64.exe
     under the related string-line of .bat-file
 
-Re-check with fresh "vagrant up" and all normally downloaded/installed (at least - this step already not a stuck-point);
+Re-check with fresh "vagrant up" and all downloaded/installed (at least - this step is already not a stuck-point);
 
----> Probably process is completed and looks like that I have to try launch VirtualBox.
+&#8688; Probably process is completed and looks like that I have to try launch VirtualBox.
 
-But with my first experience there was maybe known trouble about VirtualBOx VMs;
+But with my first experience was maybe known trouble about VirtualBOx VMs stuck;
 
 I can to think about some of tries - most likely most of them can be helpful.
 
-With my experience there was enough just restart my main system.
+But with my experience was enough just restart my main system.
 
-After this - I normally launch VirtualBox VM. 
+After this - I launched configured VirtualBox VM. 
 
-Some configure-steps for system and I tried to download Snort with their rules.
+Some further configure-steps for system and I tried to download Snort with their rules.
 
-And get total stuck about this step (but mainly with downloading rules). It was not available.
+And got total stuck about this step (but mainly with downloading rules). It was not available.
 
 With next day - I randomly met notification that probably during certain time there was troubles with Amazon S3.
 
 Most likely (and looks like) this trouble was about time when I tried get Snort-rules.
 
-And snort-rules certainly about s3.amazon-URLs, which was not available.
+And snort-rules are certainly about s3.amazon-URLs, which was not available.
 
-I tried download rules today -> all OK, good and normal. So most likely it was related with this "trouble".
+I tried download rules today and all OK, good and normal. So, most likely it was related with this "trouble".
 
     This situation (with amazon-s3) under articles marked as critical and large trouble.
     But with my experience - I totally do not feel it. 
@@ -268,13 +264,13 @@ I tried download rules today -> all OK, good and normal. So most likely it was r
     BUT ALSO MAYBE with uploading files to the github.com; I tried two picture-files.
     It was stable with "trouble"-result. Today - all OK with related steps.
     
-    And this experience was more random, that common for my usage. 
-    So it was large trouble, but not so critical.
+    And this experience was more random than common for my usage. 
+    So, yes, it was large trouble, but not so critical.
 
-Just anyway good to use such things with reasonable points and with places, where indeed it required too much.
+Just anyway good to use such things with reasonable points and with places where indeed it required too much.
 <hr />
 
-Most likely "set up" completed. So will play with Snort.
+Most likely "set up" is completed. So, will play with Snort.
 
 # SNORT
 
@@ -282,7 +278,7 @@ Firstly tried to understand how to properly use Snort and which result there sho
 
 Decided to set up it as third "option" : Network Intrusion Detection System Mode ;
 
-With this step (NIDS-try) I get trouble-stuck about configuration.
+With this step (NIDS-try) I got trouble-stuck about configuration.
 
 On current time about next one:
 
@@ -292,72 +288,60 @@ Some tries, some search with web... but result anyway about this stuck.
 
 Will play with Snort more.... 
 
-stuck mainly was about "uncomment" for the "outdated" rules together with updated-rules.
+stuck mainly was about "uncomment"-action for "outdated" rules together with updated-rules.
 
-But I re-check/re-fix and add some else changes to snort.conf (I mean - not just expected ones).
+Thus, I re-check/re-fix and add some else changes to snort.conf (I mean - not just expected ones).
 
-Launch snort and maybe it normally work as IDS; logs also there.
+Launch snort and maybe it work as IDS; logs also there.
 
 But I have to re-check about certain settings/set-up for good result of Snort-work.
 
-So before experience with metasploit - I have to "play" with Snort more time.
+So, before experience with metasploit - I have to "play" with Snort more time.
 
-Still not sure that snort configured with enough view/setting and that there is expected set-up.
+Still not sure that snort is configured with enough view/setting and that there is expected set-up.
 
 After some days - I configured Snort maybe with "OK"-view.. 
 
 But with my try to scan ports (and get information about results) - Snort ignore it (or some kind of);
 
-Randomly before my next steps (properly work with Snort and first experience about Metasploit):
-
-I get a little be more, than one week delay.... 
-
-And just with current day I will start to think about continues about this.
-
 Will try to check more about Metasploit and Snort possibilities.
 
-And..... anyway later was else one week delay.
+But found that I am not able to download Metasploit. So will play else one time... with this already.
 
-But because there was extending action for course-project-two - so some days it my delay already about two weeks.
+After some tricks and tweaks looks like that I am able to use Metasploit.
 
-Today I get proper time and ability to continue work.
+So, if SNORT do able to detect such things (which most likely required some else steps :( and configuration):
 
-But found that I not able to download Metasploit....... So will play else one time... with this on current time.
+I already able to start trying to play with Metasploit more time.
 
-After some tricks and tweaks looks like that I able normally use Metasploit.
-
-So, if SNORT will be able to detect such things (which most likely required some else steps :( and configuration):
-
-I just already able to start trying to play with Metasploit more time.
-
-Will be interesting.... but it already take so many time about steps, which (maybe) should be done more briefly.
+Will be interesting..
 
 # Metasploit
 
-So, based on my set-up I had to re-improve snort.conf and add some of limitation, exception, advanced rules to my setting.
+So, based on my set-up I had to re-improve snort.conf and add some of limitations, exceptions, advanced rules to my setting.
 
 By "setting" I mean full meanings of this Course Project Two (as configuration of system, VMs, Metasploit and Snort).
 
 And this is not really quite good and not common situation. Mostly it should be more properly - if it indeed planned to be in use.
 
-But anyway... as one of example-reasons for re-improve situation (with not totally change full setting):
+But, anyway, one of example-reasons for re-improve situation (with not totally change full setting):
 
---> in somewhat reason I tried Metasploit Community (with Pro Trial probably experience will be more friendly).
+&#8692; in somewhat reason I tried Metasploit Community (with Pro Trial probably experience will be more friendly).
 
-as result some of additional steps and more "time" for get knowledge about proper using it.
+as result some of additional steps and more "time" for getting knowledge about proper use.
 
 ======
 
-After some time of tries, researches and actions - I get and understand some examples of Snort good detection work.
+After some time, tries, researches and actions - I got and understand some examples of Snort good detection work.
 
-But also about certain situations, when Snort do not trigger something, which can be helpful.
+But also about certain situations when Snort do not trigger something helpful.
 
-As result - there just increasing of my thoughts about reasonable points of using both "tools":
+As result - there more thoughts about reasonable points of using both "tools":
 
---> Metasploit;
+&#8692; Metasploit;
 
---> Snort.
+&#8692; Snort.
 
-And basically with both of them there a lot of abilities do (or not to do) different things.
+And basically with both of them there are a lot of abilities do (or not to do) different things.
 
 ....
