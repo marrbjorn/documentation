@@ -1,3 +1,9 @@
+###### CONTENTS
+* ##### [Tries to set up Metasploitable 3 (with first CSB launch)](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#tries-to-set-up-metasploitable-3);
+* ##### [SNORT (with first CSB launch](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#snort);
+* ##### [Metasploit (with first CSB launch](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#metasploit);
+* ##### [Fresh additions based on Cyber Security Base course series 2017 (CSB-2017)]();
+
 # Tries to set up Metasploitable 3.
 
 With Project TWO ( https://cybersecuritybase.github.io/project2/ ) we have to install vulnerable system (Metasploitable 3).
@@ -347,3 +353,42 @@ As result - there more thoughts about reasonable points of using both "tools":
 And basically with both of them there are a lot of abilities do (or not to do) different things.
 
 ....
+
+# CSB-2017
+
+So, today decided to set up Metasploitable3 for current launch (second) of cybersecuritybase.
+
+It takes seven hours. One hour about research and troubleshoot fresh stuck points.
+
+Firstly, I decided to try another machine and system. As result, fresh tweaks like:
+
+- changes to system own configuration (proper support VM);
+- changes to installed software configuration (allowing disabled restricted content URLs);
+
+Then was large stuck about next step:
+
+    powershell -Command "(New-Object System.Net.WebClient).DownloadFile 
+    ('https://github.com/downloads/alexkasko/openjdk-unofficial-builds/openjdk-1.6.0-unofficial-b27-windows-amd64.zip',
+    'C:\Windows\Temp\openjdk-1.6.0-unofficial-b27-windows-amd64.zip')
+    "Exception calling "DownloadFile" with "2" argument(s): 
+    "The request was aborted: Could not create SSL/TLS secure channel."
+    At line:1 char:1+ (New-Object System.Net.WebClient).DownloadFile('https://github.com/do ...+ + 
+    CategoryInfo          : NotSpecified: (:) [], 
+    MethodInvocationException    + FullyQualifiedErrorId : WebException
+
+Such direct URL was with troubles to be opened even with Internet Explorer 11 (but not with InPrivate mode);
+
+Some tries to re-check what is it (to enable all TLS under settings; switch rules for zones; other tweaks).
+
+Found that with disabled SmartScreen URL is opened good with Internet Explorer 11. 
+
+But anyway with trouble result during scipts (powershell).
+
+Tries to re-check about reason and I decided to use/create such changes to .bat-file like workaround-fix:
+
+Fix:
+
+    powershell -Command "[Net.ServicePointManager]::SecurityProtocol = 'tls12, tls11, tls'; (New-Object System.Net.WebClient).DownloadFile('https://github.com/downloads/alexkasko/openjdk-unofficial-builds/openjdk-1.6.0-unofficial-b27-windows-amd64.zip', 'C:\Windows\Temp\openjdk-1.6.0-unofficial-b27-windows-amd64.zip')" <NULcmd /c ""C:\Program Files\7-Zip\7z.exe" x "C:\Windows\Temp\openjdk-1.6.0-unofficial-b27-windows-amd64.zip" -oC:\openjdk6"
+    
+So, stuck is sorted. Then one-time manual restarting VM and, as result, all configured and possible to use.
+
