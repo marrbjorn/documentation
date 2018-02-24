@@ -1,8 +1,8 @@
 ###### CONTENTS
-* ##### [Tries to set up Metasploitable 3 (with first CSB launch)](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#tries-to-set-up-metasploitable-3);
-* ##### [SNORT (with first CSB launch](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#snort);
-* ##### [Metasploit (with first CSB launch](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#metasploit);
-* ##### [Fresh additions based on Cyber Security Base course series 2017 (CSB-2017)]();
+* ##### [Tries to set up Metasploitable 3 --with first CSB launch--](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#tries-to-set-up-metasploitable-3);
+* ##### [SNORT --with first CSB launch--](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#snort);
+* ##### [Metasploit --with first CSB launch--](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#metasploit);
+* ##### [Fresh additions based on Cyber Security Base course series 2017 --CSB-2017--](https://github.com/marrbjorn/documentation/blob/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project/README.md#csb-2017);
 
 # Tries to set up Metasploitable 3.
 
@@ -380,7 +380,7 @@ Such direct URL was with troubles to be opened even with Internet Explorer 11 (b
 
 Some tries to re-check what is it (to enable all TLS under settings; switch rules for zones; other tweaks).
 
-Found that with disabled SmartScreen URL is opened good with Internet Explorer 11. 
+Found that after all changes and with disabled SmartScreen - URL is opened good with Internet Explorer 11. 
 
 But anyway with trouble result during scipts (powershell).
 
