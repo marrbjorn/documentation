@@ -1,8 +1,8 @@
 ###### CONTENTS
-* ##### [Tries to set up Metasploitable 3 --with first CSB launch--](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#tries-to-set-up-metasploitable-3);
-* ##### [SNORT --with first CSB launch--](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#snort);
-* ##### [Metasploit --with first CSB launch--](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#metasploit);
-* ##### [Fresh additions based on Cyber Security Base course series 2017 --CSB-2017--](https://github.com/marrbjorn/documentation/blob/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project/README.md#csb-2017);
+* ##### [Tries to set up Metasploitable 3 --with previous CSB launch--](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#tries-to-set-up-metasploitable-3);
+* ##### [SNORT --with previous CSB launch--](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#snort);
+* ##### [Metasploit --with previous CSB launch--](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#metasploit);
+* ##### [FRESH additions based on Cyber Security Base course series 2017 --CSB-2017--](https://github.com/marrbjorn/documentation/blob/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project/README.md#csb-2017);
 
 # Tries to set up Metasploitable 3.
 
@@ -382,7 +382,7 @@ Some tries to re-check what is it (to enable all TLS under settings; switch rule
 
 Found that after all changes and with disabled SmartScreen - URL is opened good with Internet Explorer 11. 
 
-But anyway with trouble result during scipts (powershell).
+But anyway with trouble result during scipts (powershell). Sounds that TLS1.2 is needed.
 
 Tries to re-check about reason and I decided to use/create such changes to .bat-file like workaround-fix:
 
@@ -392,3 +392,22 @@ Fix:
     
 So, stuck is sorted. Then one-time manual restarting VM and, as result, all configured and possible to use.
 
+Then was play (else one time) with Snort. I thought that after my previous experience it will be more brief-step.
+
+But not. I decided to use Windows 10 machine with this launch too. Snort and Windows - pretty strange for configure.
+
+I tried to tweak most of things for good state from first. But got some stuckpoints for research.
+
+In general, some of them was with previous launch too (I did not 'remember' them).
+
+All of them well-known and even discussed with Snort Support/Mailing lists. But unclear why it is not listed under documentation.
+
+Then - why config is not about any tips for most popular troubles. Even there is Pulledpork (I did not try it - but sounds as solution).
+
+But with this CSB-launch -> snort configuration take less time. Even it is still pretty good to tweak a little be.
+
+I decided to install Metasploit next and got some unexpected troubles. Three reinstallation for got proper view.
+
+Brief try with play around Metasploit and probably good to start play with full stack: Metasploitable3, Snort and Metasploit.
+
+...
