@@ -150,7 +150,7 @@ Thus, I removed VMWare (and uninstalled vagrant plugin for vmware-workstation). 
  
      https://www.mls-software.com
 
-Then, I got notifiation about "page is not available" (based on HTTPS).
+Then, I got notification about "page is not available" (based on HTTPS).
 
 Re-change protocol to HTTP and got blockpage by F-Secure. :)
 
@@ -382,7 +382,7 @@ Some tries to re-check what is it (to enable all TLS under settings; switch rule
 
 Found that after all changes and with disabled SmartScreen - URL is opened good with Internet Explorer 11. 
 
-But anyway with trouble result during scipts (powershell). Sounds that TLS1.2 is needed.
+But anyway with trouble result during scripts (powershell). Sounds that TLS1.2 is needed.
 
 Tries to re-check about reason and I decided to use/create such changes to .bat-file like workaround-fix:
 
@@ -416,7 +416,7 @@ Decided to tweak entire stack and, as result, received strange situation with bo
 
 Strange results with Metasploit, strange results with Snort.. did not play enough.
 
-In fact, perform most of important thigns - but I thought that will play more...
+In fact, performed most of important things - but I thought that I will play more...
 
 So, I have to re-check situation with more time and then will be possible to play more.
 
