@@ -410,4 +410,14 @@ I decided to install Metasploit next and got some unexpected troubles. Three rei
 
 Brief try with play around Metasploit and probably good to start play with full stack: Metasploitable3, Snort and Metasploit.
 
+But got an unexpected trouble with Metasploit; tries to research, fix or so - but else one reinstallation.
+
+Decided to tweak entire stack and, as result, received strange situation with both of them.
+
+Strange results with Metasploit, strange results with Snort.. did not play enough.
+
+In fact, perform most of important thigns - but I thought that will play more...
+
+So, I have to re-check situation with more time and then will be possible to play more.
+
 ...
