@@ -4,7 +4,7 @@
 * ##### [Metasploit --with previous CSB launch--](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project#metasploit);
 * ##### [FRESH additions based on Cyber Security Base course series 2017 --CSB-2017--](https://github.com/marrbjorn/documentation/blob/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-Second%20Project/README.md#csb-2017);
 
-# Tries to set up Metasploitable 3.
+# Tries to set up Metasploitable 3 (with previous CSB launch).
 
 With Project TWO ( https://cybersecuritybase.github.io/project2/ ) we have to install vulnerable system (Metasploitable 3).
 
@@ -59,7 +59,7 @@ With VMWare Workstation PRO (trial-time); .json-file (metasploitable3) for VMWar
 
 But I found that noted "licence-ask" (when we will try to add Vagrant box to the VM) is about certain Vagrant design.
 
-If we want to use Vagrant and VMWare (supproted VMWare Workstation) - we have to buy license "Vagrant VMWare".
+If we want to use Vagrant and VMWare (supported VMWare Workstation) - we have to buy licence "Vagrant VMWare".
 
 So... maybe it is OK, but during my try - their "shop" was not available anyway. Payments methods are not visible and just missing.
 
@@ -67,7 +67,7 @@ Thus, I removed VMWare (and uninstalled vagrant plugin for vmware-workstation). 
 
 <strong>Main meanings about this try:</strong>
 
-&#8608; If you have (or do able to buy) Vagrant VMWare license (another licence than just VMWare licence);
+&#8608; If you have (or do able to buy) Vagrant VMWare licence (another licence than just VMWare licence);
 
 &#8608; And you are owner of licence for the VMWare Workstation (or maybe other supported solutions);
 
@@ -280,7 +280,7 @@ Just anyway good to use such things with reasonable points and with places where
 
 Most likely "set up" is completed. So, will play with Snort.
 
-# SNORT
+# SNORT (with previous CSB launch)
 
 Firstly tried to understand how to properly use Snort and which result there should be.
 
@@ -324,7 +324,7 @@ I already able to start trying to play with Metasploit more time.
 
 Will be interesting..
 
-# Metasploit
+# Metasploit (with previous CSB launch)
 
 So, based on my set-up I had to re-improve snort.conf and add some of limitations, exceptions, advanced rules to my setting.
 
@@ -356,7 +356,7 @@ And basically with both of them there are a lot of abilities do (or not to do) d
 
 # CSB-2017
 
-So, today decided to set up Metasploitable3 for current launch (second) of cybersecuritybase.
+So, today decided to set up Metasploitable3 for **current launch (second) of cybersecuritybase**.
 
 It takes seven hours. One hour about research and troubleshoot fresh stuck points.
 
@@ -392,7 +392,7 @@ Fix:
     
 So, stuck is sorted. Then one-time manual restarting VM and, as result, all configured and possible to use.
 
-Then was play (else one time) with Snort. I thought that after my previous experience it will be more brief-step.
+Then was play (else one time) with Snort (still Snort 2* /2.9.11.1/). I thought that after my previous experience it will be more brief-step.
 
 But not. I decided to use Windows 10 machine with this launch too. Snort and Windows - pretty strange for configure.
 
