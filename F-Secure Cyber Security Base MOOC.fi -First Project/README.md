@@ -4,22 +4,22 @@
 * ##### [Description for design of project-application](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project#design-of-application);
 * ##### [Example-steps to play with this project-application](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project#how-to-work);
 * ##### [Meanings and conclusion notes](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project#meanings);
-* ##### [Compared to OWASP Top Ten 2013](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project#compare-to-owasp-top-ten);
+* ##### [Compared to OWASP Top Ten 2017](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project#compare-to-owasp-top-ten);
 
 Small background:
 -----------------
 
-This is more like "template" (or PoC) than "application".
+This is more like a "template" (or PoC) rather than an "application".
 
-    Design is still based on my too much small experience with all of this "development"-things;
+    Design is still based on my too much small experience with all of this "development" things;
 
-Also I am not really friendly with development.
+In addition, I am not really friendly with development.
 
-So, I decided to do a no-frills application and with some kind of "tricks" (just like template-PoC);
+Thus, I decided to make a no-frills application and do it with the help of some kind of "tricks" (just as a template-PoC);
 
 -------
 
-* Project available on the github page: https://github.com/marrbjorn/CyberSecurityCourse-2017
+* Project available on the github page: https://github.com/marrbjorn/CyberSecurityCourse-2018
 
 * and <a href="https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project">this page</a> will be as documentation of project;
 
@@ -31,11 +31,11 @@ Setup:
 Get started can be with next steps:
 -----------------------------------
 
-**FIRST**: we need to be able to work with https://cybersecuritybase.github.io (which means proper configured IDE and other requirements);
+**FIRST**: we should be able to work with https://cybersecuritybase.mooc.fi (which means properly configured IDE and other requirements);
 
-<br />**SECOND**: download this project ( https://github.com/marrbjorn/CyberSecurityCourse-2017 ) as zip-file or by git-commands as usually.
+<br />**SECOND**: download this project ( https://github.com/marrbjorn/CyberSecurityCourse-2018 ) as zip-file or by git-commands as usually.
 
-<br />**THIRD**: unpack it (if you downloaded zip-file) and open the project in the IDE (for example, with Netbeans: "File -> Open Project..." under the menu).
+<br />**THIRD**: unpack it (if you downloaded the zip-file) and open the project in the IDE (for example, with Netbeans: "File -> Open Project..." under the menu).
    
     Then do the "Clean and Build Project" (how it is called under the Netbeans);
     this will trigger downloading/creating target-files and properly build project;
@@ -56,13 +56,13 @@ Service <ins>**does not**</ins> provides ability to add more bands (this can be 
 
 Service <ins>**does**</ins> provides its own access for each music-band/musician to be able to "invite listeners";
 
-Like "friend" or someone else (some kind of special listeners); 
+For example, it could be a "friend" or someone else (some kind of special listeners); 
 
-As result there will be list (database with "name" and "phone-number") of listeners invited by music-bands;
+As a result there will be list (database with "name" and "phone-number") of listeners invited by music-bands;
 
-Service provides ability to see full list of these listeners.
+Service provides ability to see full list of these listeners*.
 
-    but this should be available just for administrators (of party/service/website);
+    *but this should be available just for administrators (of party/service/website);
     
 - - - -
 
@@ -81,6 +81,8 @@ So, there are not so many steps for critical attacks or total impact.
 But main meanings will be with same design.</strong>
 
 Next there are some of steps to play with application-project (to get a view of potential troubles or exploitation);
+
+"How To Work" description is not always too clear; sorry for that.
 
 With Java-files (or html-templates) I also added comments about the places what can be fixed (or how can be fixed);
 
@@ -120,7 +122,7 @@ We are able to start from trying to find another available pages than login-form
 
 Because, time to time, there may be "forgotten debug-pages", "consoles", "backdoors" or other.
 
-Usually based on misconfiguration or temporary mistakes;
+Usually it is based on misconfiguration or temporary mistakes;
 <pre>
 With proper result we were able to get "/hidden" page, which looks like development-debug page.
 Something as temporary ToDo List at the time when website was maintaining before release;
@@ -129,7 +131,7 @@ This page was with "exclusion" for temporary-access (by antMatchers.permitAll).
 As usage Java Spring security config feature http.authorizeRequests().
 And, as result, "excluded" from login-form.
 
-With this kind of project-application it possible:
+With this kind of project-application this is possible by:
 -> by mistake (like addition to css-access with not proper design);
 -> or specially for "debug", but does not removed after the release;
 
@@ -142,7 +144,7 @@ Hidden-page directly has meanings that should be available only to administrator
 
 And this page looks like a ToDo-list with entry-strings about some things. 
 
-The page was not removed, deleted or 'denied' for some reasons after temporary access-debug-time.
+The page was not removed, not deleted or 'denied' for some reasons after temporary access-debug-time.
 
 With this page we were able to get more interesting (or useful) information:
 
@@ -229,17 +231,17 @@ Possible to suspect that there may be other not strong passwords (music band's a
 
 With current try - we are able to think that music bands with "strong" passwords.
 
-<pre>So, with login-page http://127.0.0.1:8080  and valid credentials</pre>
+<pre>with login-page http://127.0.0.1:8080  and valid credentials</pre>
 
 We are able to get form-page; something like welcome-page.
 
       http://127.0.0.1:8080/form
 
-Where possible to read information-words and invite a listener (as music band's friend or other);
+Where possible to read information-words and to invite a listener (as music band's friend or other);
 
 Go check "enter" from first! Ok, we got information that name-field is required.
 
-So, fill it and we were able do not fill "phone"-field.
+Fill it and we were able do not fill "phone"-field.
 
 But go try to fill it (or both of them) with tricks like "html-tags or scripts"
 
@@ -283,7 +285,7 @@ This situation will create a potential ability to do <strong>Cross-Site Scriptin
 
 Name field with proper output handling as <code>th:text</code> (escaped text).
 
-So, with previous fill-action will be the situation that when someone is able to see list of listeners:
+Thus, with previous fill-action will be the situation that when someone is able to see list of listeners:
 
 he will get an alert from "phone"-field (and "string" under the "name"-column).
 
@@ -380,7 +382,7 @@ This will trigger situation that if application will be with Cross-site-scriptin
 
 should be possible to get CSRF-token (based on disabled HttpOnly for this Csrftoken-cookie);
 
-And open redirect is part of mapping-feature. With 'trouble'-design.
+And open redirect is part of mapping-feature; but feature with 'trouble'-design.
 
 <hr />
 
@@ -418,7 +420,7 @@ There is next main troublepoints and additional troubles (which can be less like
 <br />
 <li><code>"http.cors()" with disabled status and "http.headers()" with custom partly trouble-design</code></li>
 <br />
-<li><code>h2-console is available for opening using this our 'internal' tries</code></li>
+<li><code>h2-console is available for opening using this our 'internal' tries. during only our local tries</code></li>
 <br />
 <li><code>some of proper features have not been added</code></li>
 <br />
@@ -550,11 +552,11 @@ What can be covered as "Trouble Ten" from OWASP TOP TEN list.
 This project application may be vulnerable to some kind of attacks.
 Or may be with vulnerabilities, troublepoints or mistakes.
 
-Compared to OWASP and their Top Ten 2013 ( https://www.owasp.org/index.php/Top_10_2013-Top_10 ) here may be the next ones:
+Compared to OWASP and their Top Ten 2017 ( https://www.owasp.org/index.php/Top_10_2017-Top_10 ) here may be the next ones:
 
-<b>Broken Authentication and Session Management</b> <strong>||</strong> <b>Sensitive Data Exposure</b>
+<b>Broken Authentication</b> <strong>||</strong> <b>Sensitive Data Exposure</b>
 
-  <pre>as OWASP A2 and OWASP A6</pre>
+<pre>as OWASP A2 and OWASP A3</pre>
 
 There is totally not a proper work with passwords (encryption or hashing is missing; and not encrypted passwords are stored);
 
@@ -577,7 +579,7 @@ Also there is potential situation for "hack" password database.
 
 <b>Cross-Site Scripting (XSS)</b>
 
-<pre>as OWASP A3</pre>
+<pre>as OWASP A7</pre>
 
 There is not really proper escaping for user input data. For one of forms (phone-field).
 
@@ -596,7 +598,7 @@ So, potential Cross-Site Scripting attack will require more actions, steps and t
 
 <b>Security Misconfiguration</b>
 
-<pre>as OWASP A5</pre>
+<pre>as OWASP A6</pre>
 
 This is main troublepoint for current project-application.
 
@@ -617,12 +619,11 @@ But it is already with some of critical (as common sense) things like:
 - is not properly handling crash-situation;
 
 - some designs are not properly used and other;
-
 <hr />
 
-<b> Missing Function Level Access Control </b>
+<b>Broken Access Control</b> <strong>||</strong> <b>Insufficient Logging and Monitoring</b>
 
-<pre> OWASP A7</pre>
+<pre>as OWASP A5 and OWASP A10</pre>
 
 Possible to get and see information about "content, which not planned to be visible";
 
@@ -635,33 +636,8 @@ Most of this places - I noted under the project-application.
 To fix it - possible to do a lot of steps (different ones) and required to choose...
 
 Usually based on "design" of application.
-
 <hr />
-<b> Cross-Site Request Forgery (CSRF) </b>
 
-<pre>as OWASP A8</pre>
-
-There is not properly designed CSRF-protection.
-
-With current project-application - possible to perform some tricky POC-steps to exploiting this.
-
-Mainly based on potential ability to perform it against GET-method.
-
-But also csrf-protection is re-implemented to custom view with xsrf-token-cookie.
-
-Possible to perform it against POST-method (knowing xsrf-token-cookie of session).
-
-For prevent it - we were able to use default security config feature by Spring Framework.
-
-Or add additional checks/protection under the templates (Spring/Thymeleaf) or another steps.
-
-I added notes for project application about this places (mostly).
-
-As exploit-view: we are able to do the "html"-template (or html-string) for "POST"-form to add "listener";
-
-It is can be more critical with "Cross-Site-Scripting" trouble.
-
-<hr />
 <b> Using Components with Known Vulnerabilities</b>
 
 <pre>as OWASP A9</pre>
@@ -678,20 +654,6 @@ Additionally, course-template with outdated dependencies. Some of them with know
 
 But it may be not applied to application's design directly (as vulnerability).
 <hr />
-<b> Unvalidated Redirects and Forwards</b>
-
-<pre>as OWASP A10</pre>
-
-The application with "Mapping"-feature with partly broken design.
-
-It get URL (string) from GET-parameter and trying to perform redirect.
-
-So, possible to do any redirects to valid URL.
-
-Good to perform filtering or allow only internal mapping. Do not use 'parameter' from GET-request.
-
-Such as pre-configured list of URLs for mapping.
-<hr />
 <hr />
 
 <sub>
@@ -699,5 +661,5 @@ Such as pre-configured list of URLs for mapping.
 </sub>
 
 <sub>
-mooc.fi Cyber Security Base by University of Helsinki in collaboration with F-Secure Cyber Security Academy
+Cyber Security Base by University of Helsinki and MOOC.fi in collaboration with F-Secure Cyber Security Academy
 </sub>
