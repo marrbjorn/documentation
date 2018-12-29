@@ -378,12 +378,9 @@ But it is also with additional "option"; so result will be as:
 
     http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()); 
 
-This will trigger situation that if application will be with Cross-site-scripting troublepoint:
-
-should be possible to get CSRF-token (based on disabled HttpOnly for this Csrftoken-cookie);
+This will trigger situation that if application will be with Cross-site-scripting troublepoint: then possible to get CSRF-token (based on disabled HttpOnly for this Csrftoken-cookie); 
 
 And open redirect is part of mapping-feature; but feature with 'trouble'-design.
-
 <hr />
 
 MEANINGS
@@ -399,7 +396,7 @@ But can be seen as "potential" troubles or things that need to be fixed anyway.
 
 Because it can be critical later...
 
-There is next main troublepoints and additional troubles (which can be less likely with exploitation or not so visible):
+There is next list of main troublepoints and additional troubles (which can be less likely with exploitation or not so visible):
 
 <ul>
 <li><code>debug-todo-page is not deleted or is not properly denied</code></li>
@@ -451,8 +448,7 @@ About unescaped/escaped text output and CSRF:
 phone-field with unescaped output text:
 adds ability for exploiting situation by Cross-Site Scripting (XSS).
 
-if application will be with other related troublepoints:
-will be more higher risk-usage.
+if application will be with other related troublepoints: will be more higher risk-usage.
 A lot of steps to prevent it (for example, by frameworks in use - Spring or Thymeleaf);
 
 CSRF protection is enabled with project (by Spring framework);
@@ -469,22 +465,22 @@ Then CSRF protection with certain setting about cookie/csrf-token (with HttpOnly
  
 As result - possible to get this kind of "cookie" by scripts.
  
-So, CSRF protection for POST-request forms is works. And kind of csrf-tokens for GET-requests.
+So, CSRF protection for POST-request forms is works. And kind of try to use csrf-tokens for GET-requests.
  
-But we are able to do CSRF-attack for this GET-request form (anyway).
+But we are, anyway, able to do CSRF-attack for this GET-request form.
 
-And we are able to do CSRF-attack for POST-request form - if "csrf-tokens" will be known for us.
+And we are, anyway, able to do CSRF-attack for POST-request form - if "csrf-tokens" will be known for us.
 
 With Cross-Site-Scripting trouble under the project-application - quite likely to perform it.
  
-So, we are able to exploit and did the CSRF attack with this project-application based on points:
+Thus, we are able to exploit and did the CSRF attack with this project-application based on points:
  
-GET-request forms do not really protected by CSRF-tokens;
+>> GET-request forms do not really protected by CSRF-tokens;
 
-POST-request forms vulnerable if possible to get csrf-token (by using Cross-site-scripting as example).
+>> POST-request forms vulnerable if possible to get csrf-cookie-token (by using Cross-site-scripting as example).
  
-Some of this points can be more visible, when we add log-out 
-(on current time there is "mapping" and "add listener");
+Some of this points can be more critical when we decided to add log-out 
+(on current time there is vulnerable "mapping" and "add listener" functionality only);
  
 Also with enabled CSRF protection and with default state about database-console:
 hibernate/h2-console access will be 'broken' based on points that CSRF-tokens is missing with login there;
@@ -500,7 +496,7 @@ And application is not updated... even current build of "this CMS" is "v5".
 　
 So, too much outdated in fact. :) 
 
-Another point is 'outdated' template (provided by course).
+Another more real point is 'outdated' template (provided by course).
 
 Possible to launch dependency-check ( https://www.owasp.org/index.php/OWASP_Dependency_Check )
 how it was explained with course series.
@@ -536,13 +532,11 @@ Time to time this may be too much critical.
 http.headers() is implemented with partly broken design. also http.cors() with disabled state.
 http.headers().defaultsDisabled().contentTypeOptions() only;
 Potential content sniffing is valid! 
-Also as addition to "form.html" where we used 'title' before meta-charset-tag.
+Since there is "form.html" where we used 'title' before meta-charset-tag.
 
 Mapping with current view: just kind of "trick"-feature;
 But provides additional steps to "play" with project-application;
-  
-Also partly related with adding another vulnerable point.
-What can be covered as "Trouble Ten" from OWASP TOP TEN list.
+And weakness like unvalidated / open redirects.
 </pre>
 <hr />
 <hr />
@@ -555,8 +549,8 @@ Or may be with vulnerabilities, troublepoints or mistakes.
 Compared to OWASP and their Top Ten 2017 ( https://www.owasp.org/index.php/Top_10_2017-Top_10 ) here may be the next ones:
 
 <b>Broken Authentication</b> <strong>||</strong> <b>Sensitive Data Exposure</b>
-
-<pre>as OWASP A2 and OWASP A3</pre>
+<br /><sub>"Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities temporarily or permanently."</sub>
+<br /><pre>as OWASP A2 and OWASP A3</pre>
 
 There is totally not a proper work with passwords (encryption or hashing is missing; and not encrypted passwords are stored);
 
@@ -578,8 +572,8 @@ Also there is potential situation for "hack" password database.
 <hr />
 
 <b>Cross-Site Scripting (XSS)</b>
-
-<pre>as OWASP A7</pre>
+<br /><sub>"XSS flaws occur whenever an application includes untrusted data in a new web page without proper validation or escaping, or updates an existing web page with user-supplied data using a browser API that can create HTML or JavaScript. XSS allows attackers to execute scripts in the victim's browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites."</sub>
+<br /><pre>as OWASP A7</pre>
 
 There is not really proper escaping for user input data. For one of forms (phone-field).
 
@@ -597,8 +591,8 @@ So, potential Cross-Site Scripting attack will require more actions, steps and t
 <hr />
 
 <b>Security Misconfiguration</b>
-
-<pre>as OWASP A6</pre>
+<br /><sub>"Security misconfiguration is the most commonly seen trouble. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion."</sub>
+<br /><pre>as OWASP A6</pre>
 
 This is main troublepoint for current project-application.
 
@@ -622,8 +616,9 @@ But it is already with some of critical (as common sense) things like:
 <hr />
 
 <b>Broken Access Control</b> <strong>||</strong> <b>Insufficient Logging and Monitoring</b>
-
-<pre>as OWASP A5 and OWASP A10</pre>
+<br /><sub>"Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users' accounts, view sensitive files, modify other users' data, change access rights, etc."</sub><br />
+<sub>"Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems, and tamper, extract, or destroy data."</sub>
+<br /><pre>as OWASP A5 and OWASP A10</pre>
 
 Possible to get and see information about "content, which not planned to be visible";
 
@@ -639,8 +634,8 @@ Usually based on "design" of application.
 <hr />
 
 <b> Using Components with Known Vulnerabilities</b>
-
-<pre>as OWASP A9</pre>
+<br /><sub>"Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts."</sub>
+<br /><pre>as OWASP A9</pre>
 
 For this project-application we were able to think that there is some of "CMS" in use.
 
