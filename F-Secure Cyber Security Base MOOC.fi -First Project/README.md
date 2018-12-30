@@ -107,7 +107,7 @@ At this step - if credentials are not known to us - we can do some steps to try 
  * Fuzz URL-address (like if there may be other pages than login-page or pages not covered by the login-page);
  * Find something else.
  
- with this kind of project-application - any of this steps will be valid or helpful.
+ with this kind of project-application - any of these steps will be valid or helpful.
  Or there may be additional potential steps (if "credentials" are known already).
 </pre>
 * Tools like [Burp](https://portswigger.net/burp) or [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) are able to provide the ability to configure fuzz-attack for both of meanings.
@@ -131,8 +131,8 @@ This page was with "exclusion" for temporary-access (by antMatchers.permitAll).
 As usage Java Spring security config feature http.authorizeRequests().
 And, as result, "excluded" from login-form.
 
-With this kind of project-application this is possible by:
--> by mistake (like addition to css-access with not proper design);
+With this kind of project-application this is possible:
+-> by mistake (like addition to css-access exclusion via not proper design);
 -> or specially for "debug", but does not removed after the release;
 
 So, page available at http://127.0.0.1:8080/hidden 
@@ -150,7 +150,7 @@ With this page we were able to get more interesting (or useful) information:
 
 * There is a note "do not forget to remove page or do deny access";
   * <q><strong> ^ -> not completed. so, maybe other things too.</strong></q>
-* There is a special URL for some of src-files which also ask for credentials;
+* There is a special URL for some of src-files where also ask for credentials;
   * <q><strong> ^ -> most likely there should be an access-rights check.</strong></q>
 * There is a note "do not forget re-change debug admin:admin credentials";
   * <q><strong> ^ -> if the page is not "disabled" - so - maybe credentials too. </strong></q>
@@ -162,7 +162,7 @@ With this page we were able to get more interesting (or useful) information:
 After the hidden-page was found.
 And with additional potential points as:
 
-  -> debug credentials (admin:admin);
+  -> debug or default credentials (admin:admin);
    which may still be valid.
  
   -> URL to page with 'src-files' as ask for review from another team 
@@ -189,7 +189,7 @@ Usually to see/find known vulnerabilities you can check:
    "brief-search" for this vulnerability gives the result that backdoor-credentials are (CMS:CMSpassword).
 </pre>
 
-So, we have some information and the ability to try to do something.
+We have some information already and the ability to try to do something.
 
 "src"-page is covered by login-form (and looks like there is STRING-check under the parameter query by GET-method);
 
@@ -212,7 +212,7 @@ Page is loaded and we got view of some src-file. Looks like it is html-template 
 <pre>
 This page should work as temporary storage for src-files to be reviewed by another team;
 
-Most likely randomly the page has not been removed.
+Most likely randomly the page has not been removed (or even mistakenly open).
 Even there are some of the "layers" of protection-access
 (but is not too much proper and is not valid for this situation);
 
@@ -311,9 +311,9 @@ We are also able to find that under the "form-thanks" html-page (as src of page)
 
 Which should means that current point should only be visible to admins... but there is a mistake with the design.
 
-So, this 'entry' is visible for all.
+And this 'entry' is visible for all.
 
-Possible to suspect that it is else one temporary-debug (or under-construction) page.
+Possible to suspect that it is else one temporary-debug (or under construction) page.
 
 And knowing that there is mistake and page might be there (and most likely strange words are tips):
 
@@ -346,15 +346,15 @@ In fact - page should be visible just for administrators.
 
 Looks like that there is just one protection-layer: GET / "parameter"-string from user's browser.
 
-For this type of "hidden" pages should be more protection in fact.
+For this type of "hidden" pages should be more secure protection in fact.
 
-Then possible to play around CSRF and perform redirect.
+Then possible to play around CSRF and to perform redirect.
 
 Someone is reported about potential vulnerable points and it is placed with next URL:
 
     http://127.0.0.1:8080/csrfiner
     
-Where textarea with PoC-example (html-template). Possible to get this content and to create .html-file;
+Where textarea is about PoC (html-template). Possible to get this content and to create .html-file;
 
 Then possible to use it with both meanings: against GET-method and against POST-method;
 
@@ -362,7 +362,7 @@ With first form: we are able to add URL and redirect is happened.
 
 With second form: required to capture XSRF-token-cookie (possible with cross-site-scripting);
 
-With our tries - possible to get xsrf-token-cookie from browser's console. Then fill "name", "phone" and xsrf-token.
+With our internal tries - possible to get xsrf-token-cookie from browser's console. Then fill "name", "phone" and xsrf-token.
 
 With "Go!"-button -> fresh listener is added. 'broken' csrf protection.
 
@@ -380,7 +380,7 @@ But it is also with additional "option"; so result will be as:
 
 This will trigger situation that if application will be with Cross-site-scripting troublepoint: then possible to get CSRF-token (based on disabled HttpOnly for this Csrftoken-cookie); 
 
-And open redirect is part of mapping-feature; but feature with 'trouble'-design.
+And open redirect is part of mapping-feature with 'trouble'-design.
 <hr />
 
 MEANINGS
@@ -479,7 +479,7 @@ Thus, we are able to exploit and did the CSRF attack with this project-applicati
 
 >> POST-request forms vulnerable if possible to get csrf-cookie-token (by using Cross-site-scripting as example).
  
-Some of this points can be more critical when we decided to add log-out 
+Some of these points can be more critical when we decided to add log-out 
 (on current time there is vulnerable "mapping" and "add listener" functionality only);
  
 Also with enabled CSRF protection and with default state about database-console:
@@ -492,7 +492,7 @@ About vulnerable "potential" CMS:
 　
 And this CMS with known vulnerability (backdoor-admin-rights credentials).
 　
-And application is not updated... even current build of "this CMS" is "v5".
+And application is not updated... though current build of "this CMS" is "v5".
 　
 So, too much outdated in fact. :) 
 
@@ -503,7 +503,8 @@ how it was explained with course series.
 
 as result - possible to see that some of dependencies with known vulnerabilities.
 for example, outdated builds/dependencies:
-logback-core-1.1.7.jar ; tomat-embed-core-8.5.7.jar ; groovy-2.4.7.jar - spring-boot-1.4.2
+logback-core-1.1.7.jar ; tomat-embed-core-8.5.6.jar ; groovy-2.4.7.jar ; spring-boot-1.4.2
+and some more components; some of them are about one CVE.
 
 but, of course, it is not always applied to all applications with this outdated dependencies.
 
@@ -513,24 +514,24 @@ possible that vulnerabilities are unrelated with application's design.
 About the other points:
 ---
 <pre>
-Passwords are not encrypted. Not protected properly.
+Passwords are not encrypted (or if it is - not salted). Not protected properly.
 If there will be access to database (or hack it):
 it will be just passwords with normal view.
 
 HTTPS is missing - so:
-can be visible all things between browser/application with less steps to do the trick.
+can be visible all things between browser and application with less steps to do the trick.
 
-default console-access for build-in SQL/hibernate database is enabled:
+default console-access for built-in SQL/hibernate database is enabled:
 and available to be opened with this 'internal' tries.
 
 there are many features that have not been added yet:
-For example, "logout"-points and many other required things.
+For example, "logout" and many other required things (logging, protection against automated attacks).
 
 design of some steps will create a potential crash-situation. 
 Time to time this may be too much critical.
 
 http.headers() is implemented with partly broken design. also http.cors() with disabled state.
-http.headers().defaultsDisabled().contentTypeOptions() only;
+http.headers().defaultsDisabled().contentTypeOptions() only used;
 Potential content sniffing is valid! 
 Since there is "form.html" where we used 'title' before meta-charset-tag.
 
@@ -541,7 +542,7 @@ And weakness like unvalidated / open redirects.
 <hr />
 <hr />
 
-<h1 id="owasp"><ins>Compare to OWASP Top TEN</ins></h1>
+<h1 id="owasp"><ins>Compared to OWASP Top TEN</ins></h1>
 
 This project application may be vulnerable to some kind of attacks.
 Or may be with vulnerabilities, troublepoints or mistakes.
@@ -549,7 +550,8 @@ Or may be with vulnerabilities, troublepoints or mistakes.
 Compared to OWASP and their Top Ten 2017 ( https://www.owasp.org/index.php/Top_10_2017-Top_10 ) here may be the next ones:
 
 <b>Broken Authentication</b> <strong>||</strong> <b>Sensitive Data Exposure</b>
-<br /><sub>"Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities temporarily or permanently."</sub>
+<br /><sub>"Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities temporarily or permanently."</sub><br />
+<sub>"Many web applications and APIs do not properly protect sensitive data. Attackers may steal or modify such weakly protected data. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser."</sub>
 <br /><pre>as OWASP A2 and OWASP A3</pre>
 
 There is totally not a proper work with passwords (encryption or hashing is missing; and not encrypted passwords are stored);
@@ -560,15 +562,19 @@ It is will be more visible by using sniffers. Or with popular software for analy
 
 Not handled logout and some other related things. As result stuck for "session"-access;
 
-For fix this points - we are able (as example) to use features, which provided by [Spring Framework](https://spring.io/).
+For fix these points - we are able (as example) to use features, which provided by [Spring Framework](https://spring.io/).
 
 I added comments for project-application with places that can be removed or added.
 
-Mainly there we are able to use "encryption"-methods for passwords and store it as encrypted ones (properly).
+Also, there is potential situation for "hack" password database.
 
-Good to use secure connection (TLS) also. 
+Mainly there we are able to use good "encryption"-methods for passwords and store it as encrypted ones (properly).
 
-Also there is potential situation for "hack" password database.
+More nice to use salt in addition to encryption.
+
+Better to prevent most of common automated attacks, do not allow to use weak passwords.
+
+Good to use secure connection (TLS) also. And to introduce well-enough two step verification or 2FA option.
 <hr />
 
 <b>Cross-Site Scripting (XSS)</b>
@@ -587,14 +593,14 @@ I also added comments about "potential" fix under the project-application.
 
 Mainly it should be enough to re-change "th:utext" to "th:text" under the fylkr.html-template.
 
-So, potential Cross-Site Scripting attack will require more actions, steps and trick. 
+So, potential Cross-Site Scripting attack will require more actions, steps and advanced trick. 
 <hr />
 
 <b>Security Misconfiguration</b>
 <br /><sub>"Security misconfiguration is the most commonly seen trouble. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion."</sub>
 <br /><pre>as OWASP A6</pre>
 
-This is main troublepoint for current project-application.
+This is the main troublepoint for current project-application.
 
 Start from this - we are able to get some more things.
 
@@ -604,11 +610,11 @@ But it is already with some of critical (as common sense) things like:
 
 - unused debug pages with critical information ("/hidden");
 
-- disabled good security features like http.cors() and certain http.header().;
+- disabled good security features like http.cors() and certain http.header(). options;
 
 - unpatched tools in use ("potential" CMS);
 
-- default SQL/hibernate console is opened;
+- default SQL/hibernate console is opened (internally);
 
 - is not properly handling crash-situation;
 
@@ -620,28 +626,42 @@ But it is already with some of critical (as common sense) things like:
 <sub>"Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems, and tamper, extract, or destroy data."</sub>
 <br /><pre>as OWASP A5 and OWASP A10</pre>
 
-Possible to get and see information about "content, which not planned to be visible";
+Possible to get and see information about "content, which not planned to be visible to certain user";
 
-And for this is possible to use only "user's browser" and action for GET content (which should be covered).
+And for this - possible to use only "user's browser" and action for GET content (what should be covered).
 
-Not enough checks, protection-checks and also some mistakes with design it.
+Not enough checks, protection-checks and also some mistakes with design of it.
 
-Most of this places - I noted under the project-application.
+Most of these places - I marked under the project-application.
 
 To fix it - possible to do a lot of steps (different ones) and required to choose...
 
-Usually based on "design" of application.
+Usually based on "design" of application. And importance of certain layer.
+
+Basically, good to use all recommended secure things (accordingly to documentation) from first.
+
+In addition, possible to use tools like static analysis tool or even dynamic analysis tool.
+
+Quality control and other testing meanings are pretty valuable too.
+
+Logging, auditing and monitoring is critical for web-based applications.
+
+Possible to use specific tools like WAF as already kind of protection layer.
+
+Furthermore received logs, information and suspicious events are should be handled for further checks.
+
+Current project application is not about anything like this at all.
 <hr />
 
 <b> Using Components with Known Vulnerabilities</b>
 <br /><sub>"Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts."</sub>
 <br /><pre>as OWASP A9</pre>
 
-For this project-application we were able to think that there is some of "CMS" in use.
+For this project-application we were able to think that there is "CMS" in use.
 
-And this "CMS build" with known vulnerability.
+And build of this CMS with known vulnerability.
 
-Where is "known" backdoor-admin-account credentials.
+Where trouble is "publicly known" backdoor-admin-account credentials.
 
 CMS is not updated and "account" is not disabled.
 
