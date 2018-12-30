@@ -653,7 +653,7 @@ Furthermore received logs, information and suspicious events are should be handl
 Current project application is not about anything like this at all.
 <hr />
 
-<b> Using Components with Known Vulnerabilities</b>
+<b>Using Components with Known Vulnerabilities</b>
 <br /><sub>"Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts."</sub>
 <br /><pre>as OWASP A9</pre>
 
@@ -668,6 +668,46 @@ CMS is not updated and "account" is not disabled.
 Additionally, course-template with outdated dependencies. Some of them with known vulnerabilities.
 
 But it may be not applied to application's design directly (as vulnerability).
+<hr />
+
+This project application is also about OWASP TOP TEN 2013 troubles. 
+
+<sub>CSRF and Unvalidated Redirects.</sub>
+
+<b>Cross-Site Request Forgery (CSRF)</b>
+
+CSRF-protection is not designed properly.
+
+With current project-application - possible to perform some tricky POC-steps to exploit it.
+
+Mainly based on potential ability to perform it against GET-method.
+
+But, also, csrf-protection is re-implemented to custom view with xsrf-token-cookie.
+
+Thus, possible to perform it against POST-method too (knowing xsrf-token-cookie of session).
+
+For prevent it - we were able to use default security config feature by Spring Framework.
+
+Or add additional checks/protection under the templates (Spring/Thymeleaf) or another steps.
+
+I added notes for project application about these places (mostly).
+
+As exploit-view: possible to check examples with CSRFiner.html file.
+
+With unfixed "Cross-Site-Scripting" trouble - CSRF is pretty dangerous trick.
+<hr />
+
+<b>Unvalidated Redirects and Forwards</b>
+
+The application with "Mapping"-feature. Where partly broken design.
+
+It get URL (string) from GET-parameter and trying to perform redirect.
+
+So, possible to do any redirects to any valid URL.
+
+Good to perform filtering or allow only internal mapping. Do not use 'parameter' from GET-request.
+
+For example, possible to use only pre-configured list of URLs for mapping.
 <hr />
 <hr />
 
