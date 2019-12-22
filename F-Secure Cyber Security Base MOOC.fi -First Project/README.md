@@ -4,7 +4,7 @@
 * ##### [Description for design of project-application](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project#design-of-application);
 * ##### [Example-steps to play with this project-application](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project#how-to-work);
 * ##### [Meanings and conclusion notes](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project#meanings);
-* ##### [Compared to OWASP Top Ten 2017](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project#compare-to-owasp-top-ten);
+* ##### [Compared to OWASP Top Ten 2017](https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project#compared-to-owasp-top-ten);
 
 Small background:
 -----------------
