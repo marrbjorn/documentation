@@ -1,2 +1,2 @@
 # documentation
-Description and design-words about some of projects.
+Description of some projects and explanation of the chosen design.
