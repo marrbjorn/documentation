@@ -9,19 +9,19 @@
 Small background:
 -----------------
 
-This is more like a "template" (or PoC) rather than an "application".
+This is more like a 'template' (or PoC) rather than an 'application'.
 
-    Design is still based on my too much small experience with all of this "development" things;
+    Design is still based on my too much small experience with all these 'development' things;
 
-In addition, I am not really friendly with development.
+In addition, I am not really friendly with software development.
 
-Thus, I decided to make a no-frills application and do it with the help of some kind of "tricks" (just as a template-PoC);
+Thus, I decided to make no-frills application and do it with the help of some kind of 'tricks' (suitable for PoC-template);
 
 -------
 
-* Project available on the github page: https://github.com/marrbjorn/CyberSecurityCourse-2018
+* Project available on the github page: https://github.com/marrbjorn/CyberSecurityCourse-2019
 
-* and <a href="https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project">this page</a> will be as documentation of project;
+* and <a href="https://github.com/marrbjorn/documentation/tree/master/F-Secure%20Cyber%20Security%20Base%20MOOC.fi%20-First%20Project">this page</a> will be as a documentation of project;
 
 * also shortcut for <a href="#owasp">Compare to OWASP Top TEN</a>;
 
@@ -33,14 +33,14 @@ Get started can be with next steps:
 
 **FIRST**: we should be able to work with https://cybersecuritybase.mooc.fi (which means properly configured IDE and other requirements);
 
-<br />**SECOND**: download this project ( https://github.com/marrbjorn/CyberSecurityCourse-2018 ) as zip-file or by git-commands as usually.
+<br />**SECOND**: download this project ( https://github.com/marrbjorn/CyberSecurityCourse-2019 ) as zip-file or by git-commands as usually.
 
 <br />**THIRD**: unpack it (if you downloaded the zip-file) and open the project in the IDE (for example, with Netbeans: "File -> Open Project..." under the menu).
    
     Then do the "Clean and Build Project" (how it is called under the Netbeans);
-    this will trigger downloading/creating target-files and properly build project;
+    this will trigger downloading / creating target-files and proper build of the project;
 
-<br />**FOURTH**: "Run" application when you need to work or required to do some steps with application.
+<br />**FOURTH**: "Run" application when you need to work or required to do some steps with the application.
 
     first launch may ask about main class - choose this default one.
     
@@ -48,45 +48,45 @@ Get started can be with next steps:
 DESIGN OF APPLICATION
 =====================
 
-This is some kind of landing page for music-party/meeting (but mainly it is friendly service for music bands);
+This is some kind of landing page for music-party or meeting (but mainly it is a friendly service for music bands);
 
-Each music band/musician is already registered to be part of this party (by design);
+Each music band or musician is already registered to be part of this party (by design);
 
 Service <ins>**does not**</ins> provides ability to add more bands (this can be covered by the other steps);
 
-Service <ins>**does**</ins> provides its own access for each music-band/musician to be able to "invite listeners";
+Service <ins>**does**</ins> provides its own access for each music-band or musician to be able to 'invite listeners';
 
-For example, it could be a "friend" or someone else (some kind of special listeners); 
+For example, it could be a 'friend' or someone else (some kind of special listeners); 
 
-As a result there will be list (database with "name" and "phone-number") of listeners invited by music-bands;
+As a result there will be list (database with 'name' and 'phone-number') of listeners invited by music-bands;
 
-Service provides ability to see full list of these listeners*.
+The service provides an ability to see a full list of these listeners*.
 
     *but this should be available just for administrators (of party/service/website);
     
 - - - -
 
-And practically no any other features or design at work.
+And, practically, no any other features or design at work.
 So, there are not so many steps for critical attacks or total impact.
 
       but such design does not remove the points that:
-        ->>> "vulnerable" things and 
-        ->>> "vulnerable" design of things
+        ->>> 'vulnerable' things and 
+        ->>> 'vulnerable' design of things
       will add vulnerabilities or troubles to application. 
        and this:
-        ->>> can be "exploited" or 
+        ->>> can be 'exploited' or 
         ->>> not (but with a potential ability to be used).
 
 <strong>This project will be with improve design and additional features later.
 But main meanings will be with same design.</strong>
 
-Next there are some of steps to play with application-project (to get a view of potential troubles or exploitation);
+Next, there are some steps to play with application-project (to get a view of potential troubles or exploitation);
 
 "How To Work" description is not always too clear; sorry for that.
 
 With Java-files (or html-templates) I also added comments about the places what can be fixed (or how can be fixed);
 
-Mostly covered some of "troubles" in design; But some of them are based on "meanings";
+Mostly covered some of 'troubles' in design; But some of them are based on 'meanings' only;
 - - - -
 HOW TO WORK
 ===========
@@ -108,32 +108,32 @@ At this step - if credentials are not known to us - we can do some steps to try 
  * Find something else.
  
  with this kind of project-application - any of these steps will be valid or helpful.
- Or there may be additional potential steps (if "credentials" are known already).
+ Or there may be additional potential steps of escalation (if 'credentials' are known already).
 </pre>
 * Tools like [Burp](https://portswigger.net/burp) or [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) are able to provide the ability to configure fuzz-attack for both of meanings.
 
-* "Other" steps may be with direct attack or with knowledge about this service/administrators.
+* "Other" steps may be with direct attack or with precise knowledge about this service/administrators.
 
-* Additional steps are covered by the situation - if "one of registered accounts" does something "malicious".
+* Additional steps are covered by the situation - when 'one of the registered accounts' does something 'malicious'.
 
 <hr />
 
 We are able to start from trying to find another available pages than login-form.
 
-Because, time to time, there may be "forgotten debug-pages", "consoles", "backdoors" or other.
+Because, time to time, there may be 'forgotten debug-pages', 'consoles', 'backdoors' or other.
 
 Usually it is based on misconfiguration or temporary mistakes;
 <pre>
 With proper result we were able to get "/hidden" page, which looks like development-debug page.
-Something as temporary ToDo List at the time when website was maintaining before release;
+Something as a temporary ToDo List at the time when website was maintaining before release;
 
-This page was with "exclusion" for temporary-access (by antMatchers.permitAll).
+This page was with an 'exclusion' for temporary-access (by antMatchers.permitAll).
 As usage Java Spring security config feature http.authorizeRequests().
-And, as result, "excluded" from login-form.
+And, as a result, 'excluded' from login-form.
 
 With this kind of project-application this is possible:
 -> by mistake (like addition to css-access exclusion via not proper design);
--> or specially for "debug", but does not removed after the release;
+-> or specially for 'debug', but does not removed after the release;
 
 So, page available at http://127.0.0.1:8080/hidden 
 </pre>
@@ -177,7 +177,7 @@ And with additional potential points as:
    known CMS and
    known vulnerability for this CMS;
  and design of vulnerability is
-   publicly known "backdoor"-access credentials (as administrator-rights account);
+   publicly known 'backdoor'-access credentials (as administrator-rights account);
 
 Usually to see/find known vulnerabilities you can check:
   official websites, 
@@ -186,16 +186,16 @@ Usually to see/find known vulnerabilities you can check:
   other.
  
  So, maybe this CMS Framework build is also still not updated.
-   "brief-search" for this vulnerability gives the result that backdoor-credentials are (CMS:CMSpassword).
+   'brief-search' about this vulnerability gives the result that backdoor-credentials are (CMS:CMSpassword).
 </pre>
 
 We have some information already and the ability to try to do something.
 
 "src"-page is covered by login-form (and looks like there is STRING-check under the parameter query by GET-method);
 
-Available some of steps: "registered"-account will try to open this URL; anyone else; admin-account or some of tricks.
+Available some steps: 'registered'-account will try to open this URL; anyone else; admin-account or some of tricks.
 
-So, we are able to check: what if CMS Framework is not updated and to try to use "backdoor"-credentials from outdated build.
+So, we are able to check: what if CMS Framework is not updated and to try to use 'backdoor'-credentials from outdated build.
 
 Open the URL with "src"-files from "/hidden"-page and get login-form.
 
@@ -207,13 +207,13 @@ Go back to hidden page (and then to src-review page) or from login-form directly
 
 and try to use "admin:admin" for this special-src page.
 
-Page is loaded and we got view of some src-file. Looks like it is html-template for some page.
+Page is loaded and we got view of some src-file. Looks like it is a html-template for some page.
 
 <pre>
-This page should work as temporary storage for src-files to be reviewed by another team;
+This page should work as a temporary storage for src-files to be reviewed by another team;
 
 Most likely randomly the page has not been removed (or even mistakenly open).
-Even there are some of the "layers" of protection-access
+Even though there are some 'layers' of access protection
 (but is not too much proper and is not valid for this situation);
 
 As a result of knowledge about admin-debug-credentials (from forgotten debug-page):
@@ -229,7 +229,7 @@ And use any of the credentials already known to us (admin:admin or CMS:CMSpasswo
 
 Possible to suspect that there may be other not strong passwords (music band's account).
 
-With current try - we are able to think that music bands with "strong" passwords.
+With current try - we are able to think that music bands with 'strong' passwords.
 
 <pre>with login-page http://127.0.0.1:8080  and valid credentials</pre>
 
@@ -243,7 +243,7 @@ Go check "enter" from first! Ok, we got information that name-field is required.
 
 Fill it and we were able do not fill "phone"-field.
 
-But go try to fill it (or both of them) with tricks like "html-tags or scripts"
+But go try to fill it (or both of them) with stuff like 'html-tags or scripts'
 
 So, with this step <code>name</code> can be (as "alert" script): 
 
@@ -264,7 +264,7 @@ We get result-page of this action, where information-words and menu with three U
 <hr />
 
 <pre>
-In this step we can return to known page with src-file.
+At this step we can return to known page with src-file.
 And review it.
 
 Possible to see potential trouble with handling output data from database about phones.
@@ -287,7 +287,7 @@ Name field with proper output handling as <code>th:text</code> (escaped text).
 
 Thus, with previous fill-action will be the situation that when someone is able to see list of listeners:
 
-he will get an alert from "phone"-field (and "string" under the "name"-column).
+he will get an alert from "phone"-field (and 'string' under the "name"-column).
 
 This troublepoint possible to use for any other actions and reasons (with larger impact).
 
@@ -297,7 +297,7 @@ And just because it was asked for review - maybe under the debugging.
 
 -------
 
-So, back to the dreams about "strange named URL" under the "thanks-menu" after transferring listener.
+So, back to the dreams about 'strange named URL' under the "thanks-menu" after transferring listener.
 
 URL's menu-description with strange words: <q><strong>Do you remember fylkr's song "do The Trick" from album "trick"?</strong></q>
 
@@ -309,17 +309,17 @@ We are also able to find that under the "form-thanks" html-page (as src of page)
            
       <div sec:authorize = "hasAuthority ('ADMIN')">
 
-Which should means that current point should only be visible to admins... but there is a mistake with the design.
+Which should means that current item should only be visible to admins... but there is a mistake with the design.
 
 And this 'entry' is visible for all.
 
 Possible to suspect that it is else one temporary-debug (or under construction) page.
 
-And knowing that there is mistake and page might be there (and most likely strange words are tips):
+And knowing that there is a mistake and page might be there (and most likely strange words are tips):
 
 we are able to start thinking around.
 
-There were already some pages with "string"-checks under the GET-methods.
+There were already some pages with 'parameters'-based checks under the GET-methods.
 
 And it looks like there might be something around it.
 We can re-login with admin credentials.
@@ -344,9 +344,9 @@ And after that we will get a full table with all invited listeners.
 
 In fact - page should be visible just for administrators.
 
-Looks like that there is just one protection-layer: GET / "parameter"-string from user's browser.
+Looks like that there is just one protection-layer: GET / 'parameter'-string from user's browser.
 
-For this type of "hidden" pages should be more secure protection in fact.
+For this type of hidden pages should be more secure protection in fact.
 
 Then possible to play around CSRF and to perform redirect.
 
@@ -370,17 +370,17 @@ There enabled CSRF-protection, but with specific option as:
 
     csrfTokenRepository(CookieCsrfTokenRepository);
 
-As result will be something like "CSRFtoken as cookie";
+As a result will be something like 'CSRFtoken as cookie';
 
-As feature - this is can be helpful and good.
+As a feature - this is can be helpful and good.
 
-But it is also with additional "option"; so result will be as:
+But there it is also with an additional 'option'; so, result will be next:
 
     http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()); 
 
 This will trigger situation that if application will be with Cross-site-scripting troublepoint: then possible to get CSRF-token (based on disabled HttpOnly for this Csrftoken-cookie); 
 
-And open redirect is part of mapping-feature with 'trouble'-design.
+And open redirect itself is part of mapping-feature with 'trouble'-design.
 <hr />
 
 MEANINGS
@@ -390,9 +390,9 @@ This project is an application with some troubles, vulnerable points and misuse 
 
 All these points (and tricks) make it possible to exploit it.
 
-Mainly with this kind of "template/PoC" there is missing too much critical exploitation or attack-points.
+Mainly with this kind of 'template/PoC' there is missing too much critical exploitation or attack-points.
 
-But can be seen as "potential" troubles or things that need to be fixed anyway.
+But can be seen as potential troubles or things that need to be fixed anyway.
 
 Because it can be critical later...
 
@@ -409,15 +409,15 @@ There is next list of main troublepoints and additional troubles (which can be l
 <br />
 <li><code>so called "Powerful Custom CMS v2" with known vulnerability</code></li>
 <br />
-<li><code>Mapping feature with 'unvalidated redirect'-trouble based on trouble-design</code></li>
+<li><code>Mapping feature with 'unvalidated redirect' based on trouble-design</code></li>
 <br />
 <li><code>passwords are not encrypted 'at all'</code></li>
 <br />
 <li><code>HTTPS is missing</code></li>
 <br />
-<li><code>"http.cors()" with disabled status and "http.headers()" with custom partly trouble-design</code></li>
+<li><code>"http.cors()" with disabled status and "http.headers()" with custom partially trouble-design</code></li>
 <br />
-<li><code>h2-console is available for opening using this our 'internal' tries. during only our local tries</code></li>
+<li><code>h2-console is available for opening using our 'internal' tries. during only our local tries</code></li>
 <br />
 <li><code>some of proper features have not been added</code></li>
 <br />
