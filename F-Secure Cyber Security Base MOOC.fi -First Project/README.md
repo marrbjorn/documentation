@@ -380,7 +380,7 @@ But there it is also with an additional 'option'; so, result will be next:
 
 This will trigger situation that if application will be with Cross-site-scripting troublepoint: then possible to get CSRF-token (based on disabled HttpOnly for this Csrftoken-cookie); 
 
-And open redirect itself is part of mapping-feature with 'trouble'-design.
+In addition to all, there is 'open redirect' exist (part of mapping-feature with 'trouble'-design).
 <hr />
 
 MEANINGS
@@ -427,14 +427,13 @@ There is next list of main troublepoints and additional troubles (which can be l
 About first two points:
 ---
 <pre>
-it is already a troublepoint... 
-but also, as result, there start be visible a lot of other troublepoints.
-something like critical information has become randomly visible.
+it is already a troublepoint itself... 
+but also, as a result, there other troublepoints exist based on it.
+something like when critical information has become randomly visible.
 
 also list of all listeners (which should be just for administrators)
 is visible for all who know proper string.
-it is potential mistakes or not proper usage design 
-(or just do not using proper design)...
+thus, potential mistakes or wrong design.
 
 debug-page (with critical data) is available for all.
 
@@ -448,11 +447,10 @@ About unescaped/escaped text output and CSRF:
 phone-field with unescaped output text:
 adds ability for exploiting situation by Cross-Site Scripting (XSS).
 
-if application will be with other related troublepoints: will be more higher risk-usage.
+if application will be with other related troublepoints: will be more higher risk.
 A lot of steps to prevent it (for example, by frameworks in use - Spring or Thymeleaf);
 
 CSRF protection is enabled with project (by Spring framework);
- 
 With this design - covered mainly only POST/DELETE request forms. And ignored GET-request forms.
 
 If we would like to use csrf-token for GET-request forms - possible to add it with HTML template;
@@ -463,9 +461,11 @@ Generally, this is worst design - because GET-method for critical things.... not
  
 Then CSRF protection with certain setting about cookie/csrf-token (with HttpOnly-disabled).
  
-As result - possible to get this kind of "cookie" by scripts.
- 
-So, CSRF protection for POST-request forms is works. And kind of try to use csrf-tokens for GET-requests.
+As a result - possible to get this kind of "cookie" by scripts.
+
+Conclusion:
+
+So, CSRF protection for POST-request forms works. And kind of try to use csrf-tokens for GET-requests.
  
 But we are, anyway, able to do CSRF-attack for this GET-request form.
 
@@ -501,7 +501,7 @@ Another more real point is 'outdated' template (provided by course).
 Possible to launch dependency-check ( https://www.owasp.org/index.php/OWASP_Dependency_Check )
 how it was explained with course series.
 
-as result - possible to see that some of dependencies with known vulnerabilities.
+as a result - possible to see that some of dependencies with known vulnerabilities.
 for example, outdated builds/dependencies:
 logback-core-1.1.7.jar ; tomat-embed-core-8.5.6.jar ; groovy-2.4.7.jar ; spring-boot-1.4.2
 and some more components; some of them are about one CVE.
@@ -515,28 +515,28 @@ About the other points:
 ---
 <pre>
 Passwords are not encrypted (or if it is - not salted). Not protected properly.
-If there will be access to database (or hack it):
+If there will be access to database (or hack event):
 it will be just passwords with normal view.
 
 HTTPS is missing - so:
 can be visible all things between browser and application with less steps to do the trick.
 
 default console-access for built-in SQL/hibernate database is enabled:
-and available to be opened with this 'internal' tries.
+and available to be opened with these 'internal' tries.
 
 there are many features that have not been added yet:
 For example, "logout" and many other required things (logging, protection against automated attacks).
 
 design of some steps will create a potential crash-situation. 
-Time to time this may be too much critical.
+From time to time, such a point may be too much critical.
 
 http.headers() is implemented with partly broken design. also http.cors() with disabled state.
 http.headers().defaultsDisabled().contentTypeOptions() only used;
 Potential content sniffing is valid! 
 Since there is "form.html" where we used 'title' before meta-charset-tag.
 
-Mapping with current view: just kind of "trick"-feature;
-But provides additional steps to "play" with project-application;
+Mapping with current view: just kind of 'trick'-feature;
+But provides additional steps to play with project-application;
 And weakness like unvalidated / open redirects.
 </pre>
 <hr />
@@ -554,21 +554,21 @@ Compared to OWASP and their Top Ten 2017 ( https://www.owasp.org/index.php/Top_1
 <sub>"Many web applications and APIs do not properly protect sensitive data. Attackers may steal or modify such weakly protected data. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser."</sub>
 <br /><pre>as OWASP A2 and OWASP A3</pre>
 
-There is totally not a proper work with passwords (encryption or hashing is missing; and not encrypted passwords are stored);
+There is a completely wrong work with passwords (encryption or hashing is missing; and not encrypted passwords are stored);
 
 Missing encryption between application and browser (visible under the browser-console and as HTTP-protocol).
 
 It is will be more visible by using sniffers. Or with popular software for analysing web-traffic (like Wireshark);
 
-Not handled logout and some other related things. As result stuck for "session"-access;
+Not handled logout and some other related things. As a result stuck for "session"-access;
 
 For fix these points - we are able (as example) to use features, which provided by [Spring Framework](https://spring.io/).
 
 I added comments for project-application with places that can be removed or added.
 
-Also, there is potential situation for "hack" password database.
+Also, there is a potential situation for 'hacking' password database.
 
-Mainly there we are able to use good "encryption"-methods for passwords and store it as encrypted ones (properly).
+Mainly there we are able to use good encryption methods for passwords and store it as encrypted ones (properly).
 
 More nice to use salt in addition to encryption.
 
@@ -581,7 +581,7 @@ Good to use secure connection (TLS) also. And to introduce well-enough two step 
 <br /><sub>"XSS flaws occur whenever an application includes untrusted data in a new web page without proper validation or escaping, or updates an existing web page with user-supplied data using a browser API that can create HTML or JavaScript. XSS allows attackers to execute scripts in the victim's browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites."</sub>
 <br /><pre>as OWASP A7</pre>
 
-There is not really proper escaping for user input data. For one of forms (phone-field).
+There is not quite good escaping for user input data. For one of forms (phone-field).
 
 Which goes be under the table of all listeners.
 
@@ -593,7 +593,7 @@ I also added comments about "potential" fix under the project-application.
 
 Mainly it should be enough to re-change "th:utext" to "th:text" under the fylkr.html-template.
 
-So, potential Cross-Site Scripting attack will require more actions, steps and advanced trick. 
+So, then potential Cross-Site Scripting attack will require more actions, steps and advanced trick. 
 <hr />
 
 <b>Security Misconfiguration</b>
@@ -628,7 +628,7 @@ But it is already with some of critical (as common sense) things like:
 
 Possible to get and see information about "content, which not planned to be visible to certain user";
 
-And for this - possible to use only "user's browser" and action for GET content (what should be covered).
+Need to use only "user's browser" and action for GET content (what should be covered).
 
 Not enough checks, protection-checks and also some mistakes with design of it.
 
@@ -646,9 +646,9 @@ Quality control and other testing meanings are pretty valuable too.
 
 Logging, auditing and monitoring is critical for web-based applications.
 
-Possible to use specific tools like WAF as already kind of protection layer.
+Possible to use specific tools like WAF as a kind of protection layer.
 
-Furthermore received logs, information and suspicious events are should be handled for further checks.
+Furthermore, received logs, information and suspicious events are should be handled for further checks.
 
 Current project application is not about anything like this at all.
 <hr />
@@ -667,7 +667,7 @@ CMS is not updated and "account" is not disabled.
 
 Additionally, course-template with outdated dependencies. Some of them with known vulnerabilities.
 
-But it may be not applied to application's design directly (as vulnerability).
+But it may be not applied to application's design directly (as a vulnerability).
 <hr />
 
 This project application is also about OWASP TOP TEN 2013 troubles. 
@@ -678,7 +678,7 @@ This project application is also about OWASP TOP TEN 2013 troubles.
 
 CSRF-protection is not designed properly.
 
-With current project-application - possible to perform some tricky POC-steps to exploit it.
+With current project-application - possible to perform some tricky PoC-steps to exploit it.
 
 Mainly based on potential ability to perform it against GET-method.
 
@@ -692,7 +692,7 @@ Or add additional checks/protection under the templates (Spring/Thymeleaf) or an
 
 I added notes for project application about these places (mostly).
 
-As exploit-view: possible to check examples with CSRFiner.html file.
+As a kind of exploit-view: possible to check examples with CSRFiner.html file.
 
 With unfixed "Cross-Site-Scripting" trouble - CSRF is pretty dangerous trick.
 <hr />
@@ -701,11 +701,11 @@ With unfixed "Cross-Site-Scripting" trouble - CSRF is pretty dangerous trick.
 
 The application with "Mapping"-feature. Where partly broken design.
 
-It get URL (string) from GET-parameter and trying to perform redirect.
+URL (string) from GET-parameter and trying to perform redirect.
 
-So, possible to do any redirects to any valid URL.
+So, possible to do any redirect to any valid URL.
 
-Good to perform filtering or allow only internal mapping. Do not use 'parameter' from GET-request.
+Good to perform filtering or to allow only internal mapping. Do not use 'parameter' from GET-request.
 
 For example, possible to use only pre-configured list of URLs for mapping.
 <hr />
@@ -717,4 +717,8 @@ For example, possible to use only pre-configured list of URLs for mapping.
 
 <sub>
 Cyber Security Base by University of Helsinki and MOOC.fi in collaboration with F-Secure Cyber Security Academy
+</sub>
+
+<sub>
+And currently this course is created by the Agile Education Research (research group of the University of Helsinki)
 </sub>
